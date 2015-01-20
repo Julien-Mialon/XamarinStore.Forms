@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>6d3ccf33-a627-4657-80d3-476ed218d87a</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>XamarinStore.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Data\Color.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\EventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\FileCache.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\Gravatar.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\RequestMaker.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\WebService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Helper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\ListExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\MD5.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Country.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Order.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\OrderResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Product.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ProductColor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ProductSize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\User.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SSO\UserModels.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SSO\XamarinSSOClient.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Images\basket.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Images\button-image.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Images\shirt_image.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Images\xamarin_logo.png" />
+  </ItemGroup>
+</Project>

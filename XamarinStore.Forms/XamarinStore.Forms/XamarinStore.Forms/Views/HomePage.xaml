@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:vm="clr-namespace:XamarinStore.Forms.ViewModels;assembly=XamarinStore.Forms"
+			 xmlns:conv="clr-namespace:XamarinStore.Forms.Converters;assembly=XamarinStore.Forms"
+			 xmlns:controls="clr-namespace:Xamarin.Forms.Labs.Controls;assembly=Xamarin.Forms.Labs"
+			 x:Class="XamarinStore.Forms.Views.HomePage"
+			 BackgroundColor="White"
+			 >
+	<ContentPage.BindingContext>
+		<vm:HomePageViewModel />
+	</ContentPage.BindingContext>
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<conv:StringToUpperConverter x:Key="StringToUpperConverter" />
+
+			<OnPlatform x:Key="LogoImage"
+						x:TypeArguments="ImageSource"
+						Android="xamarin_logo.png"
+						WinPhone="xamarin_logo.png" />
+		</ResourceDictionary>
+	</ContentPage.Resources>
+
+	<Grid VerticalOptions="FillAndExpand">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+
+		<StackLayout BackgroundColor="White"
+					 Grid.Row="0"
+					 HorizontalOptions="FillAndExpand"
+					 Padding="16,16,16,8"
+					 Orientation="Horizontal"
+					 >
+			<StackLayout HorizontalOptions="StartAndExpand"
+						 Orientation="Horizontal">
+				<Image Source="{StaticResource LogoImage}"
+					   HorizontalOptions="Center"
+					   VerticalOptions="Center"
+					   Aspect="AspectFit"
+					   HeightRequest="26"
+					   WidthRequest="26"
+					   />
+				<Label TextColor="Black"
+					   Text="Xamarin Store"
+					   FontSize="16"
+					   VerticalOptions="Center"
+					   />
+			</StackLayout>
+			<StackLayout HorizontalOptions="EndAndExpand"
+						 Orientation="Horizontal">
+				<controls:ImageButton Image="basket"
+									  Orientation="ImageToLeft"
+									  BackgroundColor="White"
+									  TextColor="Black"
+									  Text="{Binding BasketCountText}"
+									  FontSize="16"
+									  Command="{Binding OpenBasketCommand}"
+									  />
+			</StackLayout>
+		</StackLayout>
+
+		<StackLayout VerticalOptions="FillAndExpand"
+					 Grid.Row="1"
+					 >
+			<ListView ItemsSource="{Binding ProductList}"
+					  VerticalOptions="FillAndExpand"
+					  HasUnevenRows="True"
+					  SelectedItem="{Binding SelectedProduct, Mode=TwoWay}"
+					  >
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<ViewCell.View>
+								<Grid>
+									<Image Source="{Binding ProductImage}"
+										   Aspect="AspectFill"
+										   HeightRequest="400"
+									   />
+									<StackLayout VerticalOptions="EndAndExpand"
+												 Padding="0,0,0,16"
+												 Orientation="Horizontal"
+											 >
+										<StackLayout BackgroundColor="White"
+													 Padding="12,8,8,8"
+													 HorizontalOptions="StartAndExpand">
+											<Label TextColor="Black"
+												   Text="{Binding ProductName}"
+											   />
+										</StackLayout>
+										<StackLayout BackgroundColor="#FF3498D8"
+													 Padding="8,8,12,8"
+													 HorizontalOptions="EndAndExpand">
+											<Label TextColor="White"
+												   Text="{Binding ProductPrice, Converter={StaticResource StringToUpperConverter}}"
+												   FontAttributes="Bold"
+											   />
+										</StackLayout>
+									</StackLayout>
+								</Grid>
+							</ViewCell.View>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+		</StackLayout>
+
+	</Grid>
+
+</ContentPage>
