@@ -3,10 +3,9 @@ using Acr.XamForms.UserDialogs.Droid;
 using Android.App;
 using Android.Content.PM;
 using Android.OS;
-using Xamarin.Forms.Labs;
-using Xamarin.Forms.Labs.Droid;
-using Xamarin.Forms.Labs.Services;
-using XamarinStore.Forms.Data;
+using XLabs.Forms;
+using XLabs.Ioc;
+using XLabs.Platform.Device;
 
 namespace XamarinStore.Forms
 {

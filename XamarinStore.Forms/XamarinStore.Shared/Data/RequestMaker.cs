@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Text;
@@ -20,7 +19,9 @@ namespace XamarinStore.Shared.Data
 	    {
 			_httpClient = new HttpClient(new HttpClientHandler()
 			{
-				PreAuthenticate = true,
+//#if !WINDOWS_PHONE
+//				PreAuthenticate = true,
+//#endif
 				UseDefaultCredentials = false,
 				Credentials = new NetworkCredential(API_KEY, ""),
 			});

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Xamarin.Forms;
-using XamarinStore.Forms.Converters;
+﻿using Xamarin.Forms;
 using XamarinStore.Forms.Helpers;
 using XamarinStore.Forms.Views;
 

@@ -4,9 +4,14 @@ using System.Resources;
 using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Navigation;
+using Acr.XamForms.UserDialogs;
+using Acr.XamForms.UserDialogs.WindowsPhone;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using XamarinStore.Forms.WinPhone.Resources;
+using XLabs.Forms;
+using XLabs.Ioc;
+using XLabs.Platform.Device;
 
 namespace XamarinStore.Forms.WinPhone
 {
@@ -55,7 +60,9 @@ namespace XamarinStore.Forms.WinPhone
 				PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
 			}
 
+			SetupIoC();
 		}
+
 
 		// Code to execute when the application is launching (eg, from Start)
 		// This code will not execute when the application is reactivated
@@ -218,6 +225,17 @@ namespace XamarinStore.Forms.WinPhone
 
 				throw;
 			}
+		}
+
+		private void SetupIoC()
+		{
+			SimpleContainer resolverContainer = new SimpleContainer();
+			XFormsAppWP app = new XFormsAppWP(this);
+			
+			resolverContainer.Register<IDevice>(t => WindowsPhoneDevice.CurrentDevice);
+			resolverContainer.Register<IUserDialogService>(t => new UserDialogService());
+
+			Resolver.SetResolver(resolverContainer.GetResolver());
 		}
 	}
 }

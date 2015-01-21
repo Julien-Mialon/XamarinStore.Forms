@@ -4,7 +4,9 @@
              xmlns:vm="clr-namespace:XamarinStore.Forms.ViewModels;assembly=XamarinStore.Forms"
              xmlns:converters="clr-namespace:XamarinStore.Forms.Converters;assembly=XamarinStore.Forms"
              xmlns:userControls="clr-namespace:XamarinStore.Forms.UserControls;assembly=XamarinStore.Forms"
-             x:Class="XamarinStore.Forms.Views.BasketPage">
+             x:Class="XamarinStore.Forms.Views.BasketPage"
+			 BackgroundColor="White"
+			 >
 	<ContentPage.BindingContext>
 		<vm:BasketPageViewModel />
 	</ContentPage.BindingContext>

@@ -1,17 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using Acr.XamForms.UserDialogs;
 using Xamarin.Forms;
-using Xamarin.Forms.Labs.Services;
 using XamarinStore.Forms.Data;
 using XamarinStore.Forms.Helpers;
 using XamarinStore.Forms.Models;
 using XamarinStore.Forms.Views;
+using XLabs.Ioc;
 
 namespace XamarinStore.Forms.ViewModels
 {

@@ -4,7 +4,8 @@
              xmlns:userControls="clr-namespace:XamarinStore.Forms.UserControls;assembly=XamarinStore.Forms"
              xmlns:vm="clr-namespace:XamarinStore.Forms.ViewModels;assembly=XamarinStore.Forms"
              xmlns:converters="clr-namespace:XamarinStore.Forms.Converters;assembly=XamarinStore.Forms"
-             x:Class="XamarinStore.Forms.Views.OrderSummaryPage">
+             x:Class="XamarinStore.Forms.Views.OrderSummaryPage"
+			 BackgroundColor="White">
 	<ContentPage.BindingContext>
 		<vm:OrderSummaryPageViewModel />
 	</ContentPage.BindingContext>

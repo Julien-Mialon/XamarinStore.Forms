@@ -1,11 +1,10 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 using XamarinStore.Forms.Models;
 using XamarinStore.Forms.SSO;
 using XamarinStore.Shared.Data;
@@ -73,7 +72,7 @@ namespace XamarinStore.Forms.Data
 					string response = await ReadResponseText(request);
 
 
-					products = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Product>>(response);
+					products = JsonConvert.DeserializeObject<List<Product>>(response);
 					return products;
 				}
 				catch (Exception ex)
@@ -115,7 +114,7 @@ namespace XamarinStore.Forms.Data
 					return countries;
 				var request = CreateRequest("Countries");
 				string response = await ReadResponseText(request);
-				countries = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Country>>(response);
+				countries = JsonConvert.DeserializeObject<List<Country>>(response);
 				return countries;
 			}
 			catch (Exception ex)
@@ -223,7 +222,7 @@ namespace XamarinStore.Forms.Data
 				AddContentToRequest(request, CurrentOrder.GetJson(user));
 				
 				string response = await ReadResponseText(request);
-				var result = Newtonsoft.Json.JsonConvert.DeserializeObject<OrderResult>(response);
+				var result = JsonConvert.DeserializeObject<OrderResult>(response);
 				if (!verify && result.Success)
 					CurrentOrder = new Order();
 				return result;

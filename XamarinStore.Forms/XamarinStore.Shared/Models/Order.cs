@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Newtonsoft.Json;
 
 namespace XamarinStore.Forms.Models
 {
@@ -66,7 +67,7 @@ namespace XamarinStore.Forms.Models
 			Phone = user.Phone;
 			Country = user.Country;
 
-			return Newtonsoft.Json.JsonConvert.SerializeObject (this);
+			return JsonConvert.SerializeObject (this);
 		}
 	}
 }

@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:userControls="clr-namespace:XamarinStore.Forms.UserControls;assembly=XamarinStore.Forms"
              xmlns:vm="clr-namespace:XamarinStore.Forms.ViewModels;assembly=XamarinStore.Forms"
-             x:Class="XamarinStore.Forms.Views.ShippingDetailsPage">
+             x:Class="XamarinStore.Forms.Views.ShippingDetailsPage"
+			 BackgroundColor="White">
 	<ContentPage.BindingContext>
 		<vm:ShippingDetailsPageViewModel />
 	</ContentPage.BindingContext>

@@ -4,7 +4,8 @@
              xmlns:vm="clr-namespace:XamarinStore.Forms.ViewModels;assembly=XamarinStore.Forms"
              xmlns:userControls="clr-namespace:XamarinStore.Forms.UserControls;assembly=XamarinStore.Forms"
              xmlns:converters="clr-namespace:XamarinStore.Forms.Converters;assembly=XamarinStore.Forms"
-             x:Class="XamarinStore.Forms.Views.LoginPage">
+             x:Class="XamarinStore.Forms.Views.LoginPage"
+			 BackgroundColor="White">
 	<ContentPage.BindingContext>
 		<vm:LoginPageViewModel />
 	</ContentPage.BindingContext>
@@ -39,21 +40,32 @@
 				   Source="{StaticResource ConfigureImageSource}"
 				   />
 			<StackLayout HorizontalOptions="CenterAndExpand"
-						 Orientation="Horizontal">
-				<Label Text="public const"
+						 Orientation="Horizontal"
+						 >
+				<StackLayout.Resources>
+					<ResourceDictionary>
+						<x:Double x:Key="FontSizeRes">12</x:Double>
+					</ResourceDictionary>
+				</StackLayout.Resources>
+				<Label Text="const"
 					   TextColor="#FF48D1CC"
+					   FontSize="{StaticResource FontSizeRes}"
 					   />
 				<Label Text="string"
 					   TextColor="#FF1E90FF"
+					   FontSize="{StaticResource FontSizeRes}"
 					   />
-				<Label Text="XAMARIN_ACCOUNT_EMAIL = "
+				<Label Text="XAMARIN_ACCOUNT_EMAIL ="
 					   TextColor="Black"
+					   FontSize="{StaticResource FontSizeRes}"
 					   />
 				<Label Text="{Binding SuggestionText}"
 					   TextColor="Red"
+					   FontSize="{StaticResource FontSizeRes}"
 					   />
 				<Label Text=";"
 					   TextColor="Black"
+					   FontSize="{StaticResource FontSizeRes}"
 					   />
 			</StackLayout>
 			<Label LineBreakMode="WordWrap"

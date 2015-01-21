@@ -2,10 +2,10 @@
 using System.Linq;
 using System.Windows.Input;
 using Xamarin.Forms;
-using Xamarin.Forms.Labs;
-using Xamarin.Forms.Labs.Services;
 using XamarinStore.Forms.Data;
 using XamarinStore.Forms.Models;
+using XLabs.Ioc;
+using XLabs.Platform.Device;
 
 namespace XamarinStore.Forms.ViewModels
 {

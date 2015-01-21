@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using Xamarin.Forms.Labs;
-using Xamarin.Forms.Labs.Services;
 using XamarinStore.Forms.Data;
 using XamarinStore.Forms.Helpers;
 using XamarinStore.Forms.Models;
 using XamarinStore.Forms.UIModels;
 using XamarinStore.Forms.Views;
+using XLabs.Ioc;
+using XLabs.Platform.Device;
 
 namespace XamarinStore.Forms.ViewModels
 {

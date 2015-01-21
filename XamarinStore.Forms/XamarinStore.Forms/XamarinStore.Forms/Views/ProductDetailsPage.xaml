@@ -76,6 +76,7 @@
 								FontAttributes="Bold"
 								HorizontalOptions="StartAndExpand"
 								VerticalOptions="Center"
+							   TextColor="Black"
 								/>
 					</StackLayout>
 
@@ -92,6 +93,7 @@
 									Padding="0,0,8,0"
 									VerticalOptions="Center">
 						<Label Text="COLOR"
+							   TextColor="Black"
 								FontAttributes="Bold"
 								HorizontalOptions="StartAndExpand"
 								VerticalOptions="Center"

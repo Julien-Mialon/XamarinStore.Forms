@@ -104,41 +104,48 @@ namespace XamarinStore.Forms
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextSize = global::XamarinStore.Forms.Resource.Styleable.ProgressWheel_ahTextSize;
 			global::PCLStorage.Resource.String.ApplicationName = global::XamarinStore.Forms.Resource.String.ApplicationName;
 			global::PCLStorage.Resource.String.Hello = global::XamarinStore.Forms.Resource.String.Hello;
-			global::Xamarin.Forms.Labs.Droid.Resource.Color.calendar_active_month_bg = global::XamarinStore.Forms.Resource.Color.calendar_active_month_bg;
-			global::Xamarin.Forms.Labs.Droid.Resource.Color.calendar_bg = global::XamarinStore.Forms.Resource.Color.calendar_bg;
-			global::Xamarin.Forms.Labs.Droid.Resource.Color.calendar_divider = global::XamarinStore.Forms.Resource.Color.calendar_divider;
-			global::Xamarin.Forms.Labs.Droid.Resource.Color.calendar_highlighted_day_bg = global::XamarinStore.Forms.Resource.Color.calendar_highlighted_day_bg;
-			global::Xamarin.Forms.Labs.Droid.Resource.Color.calendar_inactive_month_bg = global::XamarinStore.Forms.Resource.Color.calendar_inactive_month_bg;
-			global::Xamarin.Forms.Labs.Droid.Resource.Color.calendar_selected_day_bg = global::XamarinStore.Forms.Resource.Color.calendar_selected_day_bg;
-			global::Xamarin.Forms.Labs.Droid.Resource.Color.calendar_selected_range_bg = global::XamarinStore.Forms.Resource.Color.calendar_selected_range_bg;
-			global::Xamarin.Forms.Labs.Droid.Resource.Color.calendar_text_active = global::XamarinStore.Forms.Resource.Color.calendar_text_active;
-			global::Xamarin.Forms.Labs.Droid.Resource.Color.calendar_text_inactive = global::XamarinStore.Forms.Resource.Color.calendar_text_inactive;
-			global::Xamarin.Forms.Labs.Droid.Resource.Color.calendar_text_selected = global::XamarinStore.Forms.Resource.Color.calendar_text_selected;
-			global::Xamarin.Forms.Labs.Droid.Resource.Color.calendar_text_selector = global::XamarinStore.Forms.Resource.Color.calendar_text_selector;
-			global::Xamarin.Forms.Labs.Droid.Resource.Color.calendar_text_unselectable = global::XamarinStore.Forms.Resource.Color.calendar_text_unselectable;
-			global::Xamarin.Forms.Labs.Droid.Resource.Dimension.calendar_day_headers_paddingbottom = global::XamarinStore.Forms.Resource.Dimension.calendar_day_headers_paddingbottom;
-			global::Xamarin.Forms.Labs.Droid.Resource.Dimension.calendar_month_title_bottommargin = global::XamarinStore.Forms.Resource.Dimension.calendar_month_title_bottommargin;
-			global::Xamarin.Forms.Labs.Droid.Resource.Dimension.calendar_month_topmargin = global::XamarinStore.Forms.Resource.Dimension.calendar_month_topmargin;
-			global::Xamarin.Forms.Labs.Droid.Resource.Dimension.calendar_text_medium = global::XamarinStore.Forms.Resource.Dimension.calendar_text_medium;
-			global::Xamarin.Forms.Labs.Droid.Resource.Dimension.calendar_text_small = global::XamarinStore.Forms.Resource.Dimension.calendar_text_small;
-			global::Xamarin.Forms.Labs.Droid.Resource.Drawable.ad16 = global::XamarinStore.Forms.Resource.Drawable.ad16;
-			global::Xamarin.Forms.Labs.Droid.Resource.Drawable.calendar_bg_selector = global::XamarinStore.Forms.Resource.Drawable.calendar_bg_selector;
-			global::Xamarin.Forms.Labs.Droid.Resource.Id.calendar_grid = global::XamarinStore.Forms.Resource.Id.calendar_grid;
-			global::Xamarin.Forms.Labs.Droid.Resource.Id.calendar_view = global::XamarinStore.Forms.Resource.Id.calendar_view;
-			global::Xamarin.Forms.Labs.Droid.Resource.Id.title = global::XamarinStore.Forms.Resource.Id.title;
-			global::Xamarin.Forms.Labs.Droid.Resource.Layout.calendar_picker = global::XamarinStore.Forms.Resource.Layout.calendar_picker;
-			global::Xamarin.Forms.Labs.Droid.Resource.Layout.dialog = global::XamarinStore.Forms.Resource.Layout.dialog;
-			global::Xamarin.Forms.Labs.Droid.Resource.Layout.month = global::XamarinStore.Forms.Resource.Layout.month;
-			global::Xamarin.Forms.Labs.Droid.Resource.Layout.week = global::XamarinStore.Forms.Resource.Layout.week;
-			global::Xamarin.Forms.Labs.Droid.Resource.String.day_name_format = global::XamarinStore.Forms.Resource.String.day_name_format;
-			global::Xamarin.Forms.Labs.Droid.Resource.String.full_date_format = global::XamarinStore.Forms.Resource.String.full_date_format;
-			global::Xamarin.Forms.Labs.Droid.Resource.String.invalid_date = global::XamarinStore.Forms.Resource.String.invalid_date;
-			global::Xamarin.Forms.Labs.Droid.Resource.String.library_name = global::XamarinStore.Forms.Resource.String.library_name;
-			global::Xamarin.Forms.Labs.Droid.Resource.String.month_name_format = global::XamarinStore.Forms.Resource.String.month_name_format;
-			global::Xamarin.Forms.Labs.Droid.Resource.Style.CalendarCell = global::XamarinStore.Forms.Resource.Style.CalendarCell;
-			global::Xamarin.Forms.Labs.Droid.Resource.Style.CalendarCell_CalendarDate = global::XamarinStore.Forms.Resource.Style.CalendarCell_CalendarDate;
-			global::Xamarin.Forms.Labs.Droid.Resource.Style.CalendarCell_DayHeader = global::XamarinStore.Forms.Resource.Style.CalendarCell_DayHeader;
-			global::Xamarin.Forms.Labs.Droid.Resource.Style.CalendarTitle = global::XamarinStore.Forms.Resource.Style.CalendarTitle;
+			global::XLabs.Forms.Resource.Color.calendar_active_month_bg = global::XamarinStore.Forms.Resource.Color.calendar_active_month_bg;
+			global::XLabs.Forms.Resource.Color.calendar_bg = global::XamarinStore.Forms.Resource.Color.calendar_bg;
+			global::XLabs.Forms.Resource.Color.calendar_divider = global::XamarinStore.Forms.Resource.Color.calendar_divider;
+			global::XLabs.Forms.Resource.Color.calendar_highlighted_day_bg = global::XamarinStore.Forms.Resource.Color.calendar_highlighted_day_bg;
+			global::XLabs.Forms.Resource.Color.calendar_inactive_month_bg = global::XamarinStore.Forms.Resource.Color.calendar_inactive_month_bg;
+			global::XLabs.Forms.Resource.Color.calendar_selected_day_bg = global::XamarinStore.Forms.Resource.Color.calendar_selected_day_bg;
+			global::XLabs.Forms.Resource.Color.calendar_selected_range_bg = global::XamarinStore.Forms.Resource.Color.calendar_selected_range_bg;
+			global::XLabs.Forms.Resource.Color.calendar_text_active = global::XamarinStore.Forms.Resource.Color.calendar_text_active;
+			global::XLabs.Forms.Resource.Color.calendar_text_inactive = global::XamarinStore.Forms.Resource.Color.calendar_text_inactive;
+			global::XLabs.Forms.Resource.Color.calendar_text_selected = global::XamarinStore.Forms.Resource.Color.calendar_text_selected;
+			global::XLabs.Forms.Resource.Color.calendar_text_selector = global::XamarinStore.Forms.Resource.Color.calendar_text_selector;
+			global::XLabs.Forms.Resource.Color.calendar_text_unselectable = global::XamarinStore.Forms.Resource.Color.calendar_text_unselectable;
+			global::XLabs.Forms.Resource.Dimension.calendar_day_headers_paddingbottom = global::XamarinStore.Forms.Resource.Dimension.calendar_day_headers_paddingbottom;
+			global::XLabs.Forms.Resource.Dimension.calendar_month_title_bottommargin = global::XamarinStore.Forms.Resource.Dimension.calendar_month_title_bottommargin;
+			global::XLabs.Forms.Resource.Dimension.calendar_month_topmargin = global::XamarinStore.Forms.Resource.Dimension.calendar_month_topmargin;
+			global::XLabs.Forms.Resource.Dimension.calendar_text_medium = global::XamarinStore.Forms.Resource.Dimension.calendar_text_medium;
+			global::XLabs.Forms.Resource.Dimension.calendar_text_small = global::XamarinStore.Forms.Resource.Dimension.calendar_text_small;
+			global::XLabs.Forms.Resource.Drawable.ad16 = global::XamarinStore.Forms.Resource.Drawable.ad16;
+			global::XLabs.Forms.Resource.Drawable.calendar_bg_selector = global::XamarinStore.Forms.Resource.Drawable.calendar_bg_selector;
+			global::XLabs.Forms.Resource.Id.calendar_grid = global::XamarinStore.Forms.Resource.Id.calendar_grid;
+			global::XLabs.Forms.Resource.Id.calendar_view = global::XamarinStore.Forms.Resource.Id.calendar_view;
+			global::XLabs.Forms.Resource.Id.left_arrow = global::XamarinStore.Forms.Resource.Id.left_arrow;
+			global::XLabs.Forms.Resource.Id.right_arrow = global::XamarinStore.Forms.Resource.Id.right_arrow;
+			global::XLabs.Forms.Resource.Id.title = global::XamarinStore.Forms.Resource.Id.title;
+			global::XLabs.Forms.Resource.Layout.calendar_pager_layout = global::XamarinStore.Forms.Resource.Layout.calendar_pager_layout;
+			global::XLabs.Forms.Resource.Layout.calendar_picker = global::XamarinStore.Forms.Resource.Layout.calendar_picker;
+			global::XLabs.Forms.Resource.Layout.dialog = global::XamarinStore.Forms.Resource.Layout.dialog;
+			global::XLabs.Forms.Resource.Layout.month = global::XamarinStore.Forms.Resource.Layout.month;
+			global::XLabs.Forms.Resource.Layout.week = global::XamarinStore.Forms.Resource.Layout.week;
+			global::XLabs.Forms.Resource.String.ApplicationName = global::XamarinStore.Forms.Resource.String.ApplicationName;
+			global::XLabs.Forms.Resource.String.Hello = global::XamarinStore.Forms.Resource.String.Hello;
+			global::XLabs.Forms.Resource.String.day_name_format = global::XamarinStore.Forms.Resource.String.day_name_format;
+			global::XLabs.Forms.Resource.String.full_date_format = global::XamarinStore.Forms.Resource.String.full_date_format;
+			global::XLabs.Forms.Resource.String.invalid_date = global::XamarinStore.Forms.Resource.String.invalid_date;
+			global::XLabs.Forms.Resource.String.library_name = global::XamarinStore.Forms.Resource.String.library_name;
+			global::XLabs.Forms.Resource.String.month_name_format = global::XamarinStore.Forms.Resource.String.month_name_format;
+			global::XLabs.Forms.Resource.Style.CalendarCell = global::XamarinStore.Forms.Resource.Style.CalendarCell;
+			global::XLabs.Forms.Resource.Style.CalendarCell_CalendarDate = global::XamarinStore.Forms.Resource.Style.CalendarCell_CalendarDate;
+			global::XLabs.Forms.Resource.Style.CalendarCell_DayHeader = global::XamarinStore.Forms.Resource.Style.CalendarCell_DayHeader;
+			global::XLabs.Forms.Resource.Style.CalendarTitle = global::XamarinStore.Forms.Resource.Style.CalendarTitle;
+			global::XLabs.Platform.Resource.String.ApplicationName = global::XamarinStore.Forms.Resource.String.ApplicationName;
+			global::XLabs.Platform.Resource.String.Hello = global::XamarinStore.Forms.Resource.String.Hello;
 		}
 		
 		public partial class Attribute
@@ -313,26 +320,32 @@ namespace XamarinStore.Forms
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f080006
-			public const int calendar_grid = 2131230726;
-			
-			// aapt resource value: 0x7f080000
-			public const int calendar_view = 2131230720;
-			
-			// aapt resource value: 0x7f080003
-			public const int loadingImage = 2131230723;
+			// aapt resource value: 0x7f080008
+			public const int calendar_grid = 2131230728;
 			
 			// aapt resource value: 0x7f080001
-			public const int loadingProgressBar = 2131230721;
+			public const int calendar_view = 2131230721;
+			
+			// aapt resource value: 0x7f080003
+			public const int left_arrow = 2131230723;
+			
+			// aapt resource value: 0x7f080006
+			public const int loadingImage = 2131230726;
 			
 			// aapt resource value: 0x7f080004
-			public const int loadingProgressWheel = 2131230724;
+			public const int loadingProgressBar = 2131230724;
+			
+			// aapt resource value: 0x7f080007
+			public const int loadingProgressWheel = 2131230727;
 			
 			// aapt resource value: 0x7f080002
-			public const int textViewStatus = 2131230722;
+			public const int right_arrow = 2131230722;
 			
 			// aapt resource value: 0x7f080005
-			public const int title = 2131230725;
+			public const int textViewStatus = 2131230725;
+			
+			// aapt resource value: 0x7f080000
+			public const int title = 2131230720;
 			
 			static Id()
 			{
@@ -348,25 +361,28 @@ namespace XamarinStore.Forms
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int calendar_picker = 2130903040;
+			public const int calendar_pager_layout = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int dialog = 2130903041;
+			public const int calendar_picker = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int loading = 2130903042;
+			public const int dialog = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int loadingimage = 2130903043;
+			public const int loading = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int loadingprogress = 2130903044;
+			public const int loadingimage = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int month = 2130903045;
+			public const int loadingprogress = 2130903045;
 			
 			// aapt resource value: 0x7f030006
-			public const int week = 2130903046;
+			public const int month = 2130903046;
+			
+			// aapt resource value: 0x7f030007
+			public const int week = 2130903047;
 			
 			static Layout()
 			{
