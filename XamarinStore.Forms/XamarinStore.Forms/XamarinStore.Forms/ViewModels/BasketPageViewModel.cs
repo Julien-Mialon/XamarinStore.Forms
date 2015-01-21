@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
+using Acr.XamForms.UserDialogs;
 using Xamarin.Forms;
 using XamarinStore.Forms.Data;
 using XamarinStore.Forms.Helpers;
 using XamarinStore.Forms.UIModels;
 using XamarinStore.Forms.Views;
+using XLabs.Ioc;
 
 namespace XamarinStore.Forms.ViewModels
 {
@@ -30,8 +32,8 @@ namespace XamarinStore.Forms.ViewModels
 		public BasketPageViewModel()
 		{
 			IsBasketEnabled = false;
-			// Maybe you should link the checkout button with a real action ?
-			// CheckoutCommand = new Command(CheckoutAction);
+			
+			CheckoutCommand = new Command(CheckoutAction);
 
 			Products = WebService.Shared.CurrentOrder.Products.Select(x =>
 			{
@@ -52,7 +54,11 @@ namespace XamarinStore.Forms.ViewModels
 
 		private void CheckoutAction()
 		{
-			Navigation.PushAsync(NavigationHelper.GetPage<LoginPage>());
+			IUserDialogService dialogService = Resolver.Resolve<IUserDialogService>();
+			dialogService.Toast("CheckoutAction !");
+
+			// Maybe it should redirect you to the LoginPage hm ?
+			// Navigation.PushAsync(NavigationHelper.GetPage<LoginPage>());
 		}
 	}
 }
