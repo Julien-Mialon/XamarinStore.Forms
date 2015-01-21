@@ -3,6 +3,7 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace XamarinStore.Shared.Data
 {
@@ -17,14 +18,16 @@ namespace XamarinStore.Shared.Data
 
 	    static RequestMaker()
 	    {
-			_httpClient = new HttpClient(new HttpClientHandler()
-			{
-//#if !WINDOWS_PHONE
-//				PreAuthenticate = true,
-//#endif
-				UseDefaultCredentials = false,
-				Credentials = new NetworkCredential(API_KEY, ""),
-			});
+		    HttpClientHandler handler = new HttpClientHandler()
+		    {
+			    UseDefaultCredentials = false,
+			    Credentials = new NetworkCredential(API_KEY, ""),
+		    };
+		    if (Device.OS == TargetPlatform.Android || Device.OS == TargetPlatform.iOS)
+		    {
+			    handler.PreAuthenticate = true;
+		    }
+			_httpClient = new HttpClient(handler);
 			_httpClient.DefaultRequestHeaders.Add("User-Agent", USER_AGENT);
 			_httpClient.DefaultRequestHeaders.Add("Authorization", "Basic " + Convert.ToBase64String(Encoding.UTF8.GetBytes(API_KEY + ":")));
 			_httpClient.Timeout = TimeSpan.FromSeconds(TIMEOUT_SECONDS);

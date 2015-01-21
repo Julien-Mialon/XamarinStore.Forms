@@ -19,7 +19,6 @@ Global
 		XamarinStore.Shared\XamarinStore.Shared.projitems*{208f1e15-c99c-4306-9c3d-320076f45b43}*SharedItemsImports = 4
 		XamarinStore.Shared\XamarinStore.Shared.projitems*{1805e007-e844-4a81-b07f-0fda6f22ba65}*SharedItemsImports = 4
 		XamarinStore.Shared\XamarinStore.Shared.projitems*{d6042ec4-7fa7-4160-999c-f47380f3dd96}*SharedItemsImports = 4
-		XamarinStore.Shared\XamarinStore.Shared.projitems*{9207130d-5ecc-4afa-b906-b51422a4dcf5}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
