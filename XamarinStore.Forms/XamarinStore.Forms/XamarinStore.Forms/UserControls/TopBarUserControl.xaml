@@ -2,6 +2,7 @@
 <StackLayout xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             xmlns:helpers="clr-namespace:XamarinStore.Forms.Helpers;assembly=XamarinStore.Forms"
              x:Class="XamarinStore.Forms.UserControls.TopBarUserControl"
 			 BackgroundColor="White"
 			 HorizontalOptions="FillAndExpand"
@@ -10,16 +11,24 @@
 			 >
 	<StackLayout.Resources>
 		<ResourceDictionary>
-			<x:Double x:Key="LogoSize">38</x:Double>
-
+			<OnPlatform x:Key="LogoSize"
+						x:TypeArguments="x:Double"
+						Android="38"
+						WinPhone="38" 
+						iOS="38"
+						/>
 			<OnPlatform x:Key="BasketSource"
-						x:TypeArguments="FileImageSource"
+						x:TypeArguments="ImageSource"
 						Android="basket.png"
-						WinPhone="basket.png" />
+						WinPhone="basket.png" 
+						iOS="{helpers:ImageResource XamarinStore.Forms.Images.basket.png}"
+						/>
 			<OnPlatform x:Key="LogoSource"
 						x:TypeArguments="ImageSource"
 						Android="xamarin_logo.png"
-						WinPhone="xamarin_logo.png" />
+						WinPhone="xamarin_logo.png" 
+						iOS="{helpers:ImageResource XamarinStore.Forms.Images.xamarin_logo.png}"
+						/>
 		</ResourceDictionary>
 	</StackLayout.Resources>
 	<StackLayout HorizontalOptions="StartAndExpand"
@@ -31,6 +40,7 @@
 			   HeightRequest="{StaticResource LogoSize}"
 			   WidthRequest="{StaticResource LogoSize}"
 			   Source="{StaticResource LogoSource}"
+
 			   />
 		<Label Text="Xamarin Store"
 			   FontAttributes="Bold"
@@ -44,13 +54,14 @@
 				 Orientation="Horizontal"
 				 IsVisible="{Binding IsBasketEnabled}"
 				 >
-		<controls:ImageButton Image="{StaticResource BasketSource}"
+		<controls:ImageButton Source="{StaticResource BasketSource}"
 							  Orientation="ImageToLeft"
 							  BackgroundColor="White"
 							  TextColor="Black"
 							  Text="{Binding BasketCountText}"
 							  FontSize="16"
 							  Command="{Binding OpenBasketCommand}"
+
 							  />
 	</StackLayout>
 </StackLayout>

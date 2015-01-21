@@ -28,10 +28,21 @@
 		<StackLayout VerticalOptions="FillAndExpand"
 					 Grid.Row="1"
 					 >
+			<StackLayout.Resources>
+				<ResourceDictionary>
+					<OnPlatform x:Key="UnevenRowsResource"
+								x:TypeArguments="x:Boolean"
+								Android="True"
+								WinPhone="True" 
+								iOS="False"
+								/>
+				</ResourceDictionary>
+			</StackLayout.Resources>
 			<ListView ItemsSource="{Binding ProductList}"
 					  VerticalOptions="FillAndExpand"
-					  HasUnevenRows="True"
+					  HasUnevenRows="{StaticResource UnevenRowsResource}"
 					  SelectedItem="{Binding SelectedProduct, Mode=TwoWay}"
+					  RowHeight="{Binding ImageHeight}"
 					  >
 				<ListView.ItemTemplate>
 					<DataTemplate>
@@ -40,7 +51,6 @@
 								<Grid>
 									<Image Source="{Binding ProductImage}"
 										   Aspect="AspectFill"
-										   HeightRequest="350"
 									   />
 									<StackLayout VerticalOptions="EndAndExpand"
 												 Padding="0,0,0,16"

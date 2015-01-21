@@ -4,6 +4,7 @@
              xmlns:vm="clr-namespace:XamarinStore.Forms.ViewModels;assembly=XamarinStore.Forms"
              xmlns:converters="clr-namespace:XamarinStore.Forms.Converters;assembly=XamarinStore.Forms"
              xmlns:userControls="clr-namespace:XamarinStore.Forms.UserControls;assembly=XamarinStore.Forms"
+             xmlns:helpers="clr-namespace:XamarinStore.Forms.Helpers;assembly=XamarinStore.Forms"
              x:Class="XamarinStore.Forms.Views.BasketPage"
 			 BackgroundColor="White"
 			 >
@@ -20,6 +21,13 @@
 						x:Key="EmptyBasketImageSource"
 						Android="empty_basket.png"
 						WinPhone="empty_basket.png"
+						iOS="{helpers:ImageResource XamarinStore.Forms.Images.empty_basket.png}"
+						/>
+			<OnPlatform x:Key="UnevenRowsResource"
+						x:TypeArguments="x:Boolean"
+						Android="True"
+						WinPhone="True" 
+						iOS="False"
 						/>
 		</ResourceDictionary>
 	</ContentPage.Resources>
@@ -55,9 +63,10 @@ Go back and add some items !
 
 		<ListView ItemsSource="{Binding Products}"
 				  Grid.Row="1"
-				  HasUnevenRows="True"
+				  HasUnevenRows="{StaticResource UnevenRowsResource}"
 				  ItemSelected="ListView_OnItemSelected"
 				  IsVisible="{Binding IsBasketEmpty, Converter={StaticResource BooleanNegationConverter}}"
+				  RowHeight="80"
 				  >
 			<ListView.ItemTemplate>
 				<DataTemplate>

@@ -4,6 +4,7 @@
              xmlns:vm="clr-namespace:XamarinStore.Forms.ViewModels;assembly=XamarinStore.Forms"
              xmlns:userControls="clr-namespace:XamarinStore.Forms.UserControls;assembly=XamarinStore.Forms"
              xmlns:converters="clr-namespace:XamarinStore.Forms.Converters;assembly=XamarinStore.Forms"
+             xmlns:helpers="clr-namespace:XamarinStore.Forms.Helpers;assembly=XamarinStore.Forms"
              x:Class="XamarinStore.Forms.Views.LoginPage"
 			 BackgroundColor="White">
 	<ContentPage.BindingContext>
@@ -17,6 +18,7 @@
 						x:Key="ConfigureImageSource"
 						Android="configure.png"
 						WinPhone="configure.png"
+						iOS="{helpers:ImageResource XamarinStore.Forms.Images.configure.png}"
 						/>
 			<converters:BooleanNegationConverter x:Key="BooleanNegationConverter" />
 		</ResourceDictionary>

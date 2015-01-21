@@ -20,5 +20,21 @@ namespace XamarinStore.Forms.Helpers
 				return display.Width;
 			}
 		}
+
+		public static int Height
+		{
+			get
+			{
+				IDevice device = Resolver.Resolve<IDevice>();
+				IDisplay display = device.Display;
+
+				if (display.Xdpi < 1)
+				{
+					//windows phone
+					return display.Height/100;
+				}
+				return display.Height;
+			}
+		}
 	}
 }

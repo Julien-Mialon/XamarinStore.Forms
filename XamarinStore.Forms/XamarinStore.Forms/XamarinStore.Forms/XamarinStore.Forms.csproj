@@ -74,12 +74,17 @@
     <Compile Include="Views\ShippingDetailsPage.xaml.cs">
       <DependentUpon>ShippingDetailsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\ImageResourceExtension.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\HomePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Images\xamarin_logo.png" />
+    <EmbeddedResource Include="Images\basket.png" />
+    <EmbeddedResource Include="Images\configure.png" />
+    <EmbeddedResource Include="Images\empty_basket.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Acr.XamForms.UserDialogs">
@@ -199,4 +204,7 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <ItemGroup>
+    <Folder Include="Images\" />
+  </ItemGroup>
 </Project>

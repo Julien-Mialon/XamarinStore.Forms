@@ -8,6 +8,7 @@ using UIKit;
 using XLabs.Forms;
 using XLabs.Ioc;
 using XLabs.Platform.Device;
+using System.Reflection;
 
 namespace XamarinStore.Forms.iOS
 {
@@ -30,6 +31,10 @@ namespace XamarinStore.Forms.iOS
 
 			global::Xamarin.Forms.Forms.Init();
 			LoadApplication(new App());
+
+			var assembly = typeof(AppDelegate).GetType ().Assembly;
+			foreach (var res in assembly.GetManifestResourceNames())
+				System.Diagnostics.Debug.WriteLine ("Resource : " + res);
 
 			return base.FinishedLaunching(app, options);
 		}
