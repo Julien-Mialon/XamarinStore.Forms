@@ -47,10 +47,6 @@ namespace XamarinStore.Forms.ViewModels
 
 		private void ItemSelected(ProductUIModel product)
 		{
-			//SelectedProduct = null;
-
-			
-
 			Device.BeginInvokeOnMainThread(() =>
 			{
 				SelectedProduct = null;
@@ -87,6 +83,16 @@ namespace XamarinStore.Forms.ViewModels
 				LoadImageAsync(result, x.ImageForSize(screenWidth));
 				return result;
 			}).ToList();
+
+
+			//TODO : remove debug instructions
+			//foreach (Product p in products)
+			//{
+			//	p.Size = p.Sizes.First();
+			//	p.Color = p.Colors.First();
+
+			//	WebService.Shared.CurrentOrder.Add(p);
+			//}
 		}
 
 		private async void LoadImageAsync(ProductUIModel product, string imageUri)

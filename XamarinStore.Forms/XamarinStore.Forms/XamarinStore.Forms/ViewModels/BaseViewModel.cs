@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Windows.Input;
 using Xamarin.Forms;
+using XamarinStore.Forms.Data;
+using XamarinStore.Forms.Helpers;
 using XamarinStore.Forms.UIModels;
+using XamarinStore.Forms.Views;
 
 namespace XamarinStore.Forms.ViewModels
 {
@@ -25,7 +28,29 @@ namespace XamarinStore.Forms.ViewModels
 		{
 			BasketCountText = "No items...";
 
+			WebService.Shared.CurrentOrder.ProductsChanged += OnOrderChanged;
 			OpenBasketCommand = new Command(OpenBasketAction);
+
+			OnOrderChanged(this, EventArgs.Empty);
+		}
+
+		private void OnOrderChanged(object sender, EventArgs e)
+		{
+			int count = WebService.Shared.CurrentOrder.Products.Count;
+			string str = "";
+			if (count == 0)
+			{
+				str = "No items...";
+			}
+			else if (count == 1)
+			{
+				str = "1 item :)";
+			}
+			else
+			{
+				str = string.Format("{0} items ;-)", count);
+			}
+			BasketCountText = str;
 		}
 
 		public virtual void Initialized(Dictionary<string, object> parameters)
@@ -45,7 +70,7 @@ namespace XamarinStore.Forms.ViewModels
 
 		private void OpenBasketAction()
 		{
-			//TODO
+			Navigation.PushAsync(NavigationHelper.GetPage<BasketPage>());
 		}
 	}
 }

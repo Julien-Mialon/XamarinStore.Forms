@@ -36,14 +36,20 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="Converters\StringToUpperConverter.cs" />
+    <Compile Include="Converters\ToStringConverter.cs" />
     <Compile Include="Helpers\ImageHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UIModels\AbstractUIModel.cs" />
     <Compile Include="UIModels\NotifierBase.cs" />
     <Compile Include="UIModels\ProductUIModel.cs" />
+    <Compile Include="ViewElements\BindablePicker.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\BasketPageViewModel.cs" />
     <Compile Include="ViewModels\HomePageViewModel.cs" />
     <Compile Include="ViewModels\ProductDetailViewModel.cs" />
+    <Compile Include="Views\BasketPage.xaml.cs">
+      <DependentUpon>BasketPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
@@ -95,7 +101,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ViewElements\" />
+    <EmbeddedResource Include="Views\BasketPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\ProductDetailsPage.xaml">

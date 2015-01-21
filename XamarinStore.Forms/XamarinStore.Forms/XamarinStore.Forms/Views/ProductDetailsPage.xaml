@@ -2,6 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:XamarinStore.Forms.ViewModels;assembly=XamarinStore.Forms"
+             xmlns:controls="clr-namespace:Xamarin.Forms.Labs.Controls;assembly=Xamarin.Forms.Labs"
+             xmlns:viewElements="clr-namespace:XamarinStore.Forms.ViewElements;assembly=XamarinStore.Forms"
              x:Class="XamarinStore.Forms.Views.ProductDetailsPage"
 			 BackgroundColor="White">
 	<ContentPage.BindingContext>
@@ -10,9 +12,148 @@
 	<ContentPage.Resources>
 		<ResourceDictionary>
 			<!-- put resources here -->
+			<OnPlatform x:Key="LogoImage"
+						x:TypeArguments="ImageSource"
+						Android="xamarin_logo.png"
+						WinPhone="xamarin_logo.png" />
 		</ResourceDictionary>
 	</ContentPage.Resources>
-	<Label TextColor="Black"
-		   Text="{Binding Name}"
-		   />
+
+	<Grid VerticalOptions="FillAndExpand">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+
+		<StackLayout BackgroundColor="White"
+					 Grid.Row="0"
+					 HorizontalOptions="FillAndExpand"
+					 Padding="16,16,16,8"
+					 Orientation="Horizontal"
+					 >
+			<StackLayout HorizontalOptions="StartAndExpand"
+						 Orientation="Horizontal">
+				<Image Source="{StaticResource LogoImage}"
+					   HorizontalOptions="Center"
+					   VerticalOptions="Center"
+					   Aspect="AspectFit"
+					   HeightRequest="26"
+					   WidthRequest="26"
+					   />
+				<Label TextColor="Black"
+					   Text="Xamarin Store"
+					   FontSize="16"
+					   VerticalOptions="Center"
+					   />
+			</StackLayout>
+			<StackLayout HorizontalOptions="EndAndExpand"
+						 Orientation="Horizontal">
+				<controls:ImageButton Image="basket"
+									  Orientation="ImageToLeft"
+									  BackgroundColor="White"
+									  TextColor="Black"
+									  Text="{Binding BasketCountText}"
+									  FontSize="16"
+									  Command="{Binding OpenBasketCommand}"
+									  />
+			</StackLayout>
+		</StackLayout>
+
+		<Image Aspect="AspectFill"
+				Source="{Binding ProductImageSource}"
+				HorizontalOptions="FillAndExpand"
+			   Grid.Row="1"
+				/>
+
+		<StackLayout Orientation="Vertical"
+					 Grid.Row="2">
+			<StackLayout Orientation="Vertical"
+							Padding="24,24,24,24">
+				<StackLayout Orientation="Horizontal"
+								Padding="0,0,0,8">
+					<Label HorizontalOptions="StartAndExpand"
+							Text="{Binding CurrentProduct.Name}"
+							TextColor="#FFB455B6"
+							FontSize="24"
+						/>
+
+					<Label HorizontalOptions="EndAndExpand"
+							Text="{Binding CurrentProduct.PriceDescription}"
+							TextColor="#FF3498DB"
+							FontSize="24"
+							FontAttributes="Bold"
+						/>
+				</StackLayout>
+
+				<StackLayout Padding="0,0,0,8">
+					<Label TextColor="#FF738182"
+							Text="{Binding CurrentProduct.Description}"
+							FontSize="14"
+							/>
+				</StackLayout>
+
+				<Grid HorizontalOptions="FillAndExpand">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+						<RowDefinition Height="Auto" />
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="*" />
+					</Grid.ColumnDefinitions>
+
+					<StackLayout Grid.Row="0"
+									Grid.Column="0"
+									Padding="0,0,8,0"
+									VerticalOptions="Center">
+						<Label Text="SIZE"
+								FontAttributes="Bold"
+								HorizontalOptions="StartAndExpand"
+								VerticalOptions="Center"
+								/>
+					</StackLayout>
+
+					<StackLayout Grid.Row="0"
+									Grid.Column="1"
+									Padding="4,0,0,0">
+						<viewElements:BindablePicker ItemsSource="{Binding CurrentProduct.Sizes}"
+														SelectedItem="{Binding CurrentSize, Mode=TwoWay}"
+														/>
+					</StackLayout>
+
+					<StackLayout Grid.Row="1"
+									Grid.Column="0"
+									Padding="0,0,8,0"
+									VerticalOptions="Center">
+						<Label Text="COLOR"
+								FontAttributes="Bold"
+								HorizontalOptions="StartAndExpand"
+								VerticalOptions="Center"
+								/>
+					</StackLayout>
+
+					<StackLayout Grid.Row="1"
+									Grid.Column="1"
+									Padding="4,0,0,0">
+						<viewElements:BindablePicker ItemsSource="{Binding CurrentProduct.Colors}"
+														SelectedItem="{Binding CurrentColor, Mode=TwoWay}"
+														/>
+					</StackLayout>
+
+					<Button Grid.Row="2"
+							Grid.Column="0"
+							Grid.ColumnSpan="2"
+							Text="Add to Basket"
+							HorizontalOptions="FillAndExpand"
+							TextColor="White"
+							BackgroundColor="#FF77D065"
+							Command="{Binding OrderCommand}"
+							/>
+				</Grid>
+			</StackLayout>
+		</StackLayout>
+	</Grid>
+
 </ContentPage>

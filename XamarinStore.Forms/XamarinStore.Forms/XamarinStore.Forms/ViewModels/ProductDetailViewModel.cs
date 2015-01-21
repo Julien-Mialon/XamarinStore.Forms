@@ -1,4 +1,10 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Input;
+using Xamarin.Forms;
+using Xamarin.Forms.Labs;
+using Xamarin.Forms.Labs.Services;
+using XamarinStore.Forms.Data;
 using XamarinStore.Forms.Models;
 
 namespace XamarinStore.Forms.ViewModels
@@ -6,6 +12,26 @@ namespace XamarinStore.Forms.ViewModels
 	public class ProductDetailViewModel : BaseViewModel
 	{
 		private Product _currentProduct;
+		private ImageSource _productImageSource;
+		private ProductSize _currentSize;
+		private ProductColor _currentColor;
+
+		public ProductColor CurrentColor
+		{
+			get { return _currentColor; }
+			set { SetProperty<ProductColor>(ref _currentColor, value); }
+		}
+
+		public ImageSource ProductImageSource
+		{
+			get { return _productImageSource; }
+			set { SetProperty<ImageSource>(ref _productImageSource, value); }
+		}
+		public ProductSize CurrentSize
+		{
+			get { return _currentSize; }
+			set { SetProperty<ProductSize>(ref _currentSize, value); }
+		}
 
 		public Product CurrentProduct
 		{
@@ -13,12 +39,21 @@ namespace XamarinStore.Forms.ViewModels
 			set { SetProperty<Product>(ref _currentProduct, value); }
 		}
 
-		private string _name;
+		public ICommand OrderCommand { get; private set; }
 
-		public string Name
+		public ProductDetailViewModel()
 		{
-			get { return _name; }
-			set { SetProperty<string>(ref _name, value); }
+			OrderCommand = new Command(OrderAction);
+		}
+
+		private void OrderAction()
+		{
+			Product orderedProduct = CurrentProduct.Clone();
+			orderedProduct.Color = CurrentColor;
+			orderedProduct.Size = CurrentSize;
+
+			WebService.Shared.CurrentOrder.Add(orderedProduct);
+			Navigation.PopAsync();
 		}
 
 		public override void Initialized(Dictionary<string, object> parameters)
@@ -26,7 +61,10 @@ namespace XamarinStore.Forms.ViewModels
 			base.Initialized(parameters);
 
 			CurrentProduct = GetParameter<Product>("Product");
-			Name = CurrentProduct.Name;
+			CurrentSize = CurrentProduct.Sizes.First();
+			CurrentColor = CurrentProduct.Colors.First();
+
+			ProductImageSource = CurrentProduct.ImageForSize(Resolver.Resolve<IDevice>().Display.Width);
 		}
 	}
 }

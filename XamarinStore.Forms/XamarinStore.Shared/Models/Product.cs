@@ -66,7 +66,7 @@ namespace XamarinStore.Forms.Models
 
 		#region ICloneable implementation
 
-		public object Clone ()
+		public Product Clone ()
 		{
 			return new Product {
 				Price =  Price,

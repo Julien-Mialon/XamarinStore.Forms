@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:XamarinStore.Forms.ViewModels;assembly=XamarinStore.Forms"
+             xmlns:converters="clr-namespace:XamarinStore.Forms.Converters;assembly=XamarinStore.Forms"
+             x:Class="XamarinStore.Forms.Views.BasketPage">
+	<ContentPage.BindingContext>
+		<vm:BasketPageViewModel />
+	</ContentPage.BindingContext>
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<converters:ToStringConverter x:Key="ToStringConverter" />
+			<OnPlatform x:Key="LogoImage"
+						x:TypeArguments="ImageSource"
+						Android="xamarin_logo.png"
+						WinPhone="xamarin_logo.png" />
+			<converters:StringToUpperConverter x:Key="StringToUpperConverter" />
+		</ResourceDictionary>
+	</ContentPage.Resources>
+
+	<Grid VerticalOptions="FillAndExpand">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+
+		<StackLayout BackgroundColor="White"
+					 Grid.Row="0"
+					 HorizontalOptions="FillAndExpand"
+					 Padding="16,16,16,8"
+					 Orientation="Horizontal"
+					 >
+			<StackLayout HorizontalOptions="StartAndExpand"
+						 Orientation="Horizontal">
+				<Image Source="{StaticResource LogoImage}"
+					   HorizontalOptions="Center"
+					   VerticalOptions="Center"
+					   Aspect="AspectFit"
+					   HeightRequest="26"
+					   WidthRequest="26"
+					   />
+				<Label TextColor="Black"
+					   Text="Xamarin Store"
+					   FontSize="16"
+					   VerticalOptions="Center"
+					   />
+			</StackLayout>
+		</StackLayout>
+
+		<ListView ItemsSource="{Binding Products}"
+				  Grid.Row="1"
+				  HasUnevenRows="True"
+				  ItemSelected="ListView_OnItemSelected"
+				  >
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<ViewCell.View>
+							<Grid HeightRequest="80">
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="3*" />
+									<ColumnDefinition Width="17*" />
+								</Grid.ColumnDefinitions>
+								<Image HorizontalOptions="Fill"
+									   VerticalOptions="Center"
+									   Aspect="AspectFill"
+									   Source="{Binding ProductImage}"
+									   Grid.Column="0"
+									   />
+								<StackLayout Orientation="Horizontal"
+											 HorizontalOptions="FillAndExpand"
+											 Padding="8,0,8,0"
+											 Grid.Column="1"
+											 >
+									<StackLayout Orientation="Vertical"
+												 HorizontalOptions="StartAndExpand"
+												 VerticalOptions="Center">
+										<Label Text="{Binding ProductName}"
+											   TextColor="#FF272727"
+											   FontSize="18"
+										   />
+										<Label Text="{Binding InnerObject.Size, Converter={StaticResource ToStringConverter}}"
+											   TextColor="#FF8C8C8C"
+											   FontSize="12"
+										   />
+										<Label Text="{Binding InnerObject.Color, Converter={StaticResource ToStringConverter}}"
+											   TextColor="#FF8C8C8C"
+											   FontSize="12"
+										   />
+									</StackLayout>
+									<StackLayout Orientation="Vertical"
+												 HorizontalOptions="EndAndExpand"
+												 VerticalOptions="StartAndExpand">
+										<Label Text="{Binding ProductPrice, Converter={StaticResource StringToUpperConverter}}"
+											   TextColor="#FF09A8D6"
+											   FontSize="16"
+											   />
+									</StackLayout>
+								</StackLayout>
+							</Grid>
+						</ViewCell.View>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+
+		<StackLayout Grid.Row="2"
+					 Padding="16,16,16,16">
+			<Button Text="Checkout"
+					HorizontalOptions="FillAndExpand"
+					TextColor="White"
+					BackgroundColor="#FF77D065"
+					Command="{Binding CheckoutCommand}"
+					/>
+		</StackLayout>
+	</Grid>
+
+</ContentPage>
