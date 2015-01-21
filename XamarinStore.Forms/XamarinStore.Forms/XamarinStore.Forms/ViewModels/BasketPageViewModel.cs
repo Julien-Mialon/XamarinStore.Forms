@@ -30,7 +30,8 @@ namespace XamarinStore.Forms.ViewModels
 		public BasketPageViewModel()
 		{
 			IsBasketEnabled = false;
-			CheckoutCommand = new Command(CheckoutAction);
+			// Maybe you should link the checkout button with a real action ?
+			// CheckoutCommand = new Command(CheckoutAction);
 
 			Products = WebService.Shared.CurrentOrder.Products.Select(x =>
 			{

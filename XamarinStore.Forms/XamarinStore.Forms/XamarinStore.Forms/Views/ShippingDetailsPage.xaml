@@ -75,7 +75,7 @@
 						   Placeholder="State"
 						   HorizontalOptions="FillAndExpand"
 						   />
-					<Button Text="Place Holder"
+					<Button Text="Place Order"
 							TextColor="White"
 							BackgroundColor="{StaticResource GreenColor}"
 							HorizontalOptions="FillAndExpand"
