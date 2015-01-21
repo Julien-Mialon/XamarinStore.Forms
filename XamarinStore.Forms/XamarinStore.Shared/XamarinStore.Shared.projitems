@@ -28,10 +28,4 @@
     <Compile Include="$(MSBuildThisFileDirectory)SSO\UserModels.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SSO\XamarinSSOClient.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="$(MSBuildThisFileDirectory)Images\basket.png" />
-    <Content Include="$(MSBuildThisFileDirectory)Images\button-image.png" />
-    <Content Include="$(MSBuildThisFileDirectory)Images\shirt_image.png" />
-    <Content Include="$(MSBuildThisFileDirectory)Images\xamarin_logo.png" />
-  </ItemGroup>
 </Project>
