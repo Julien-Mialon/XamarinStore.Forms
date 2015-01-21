@@ -8,14 +8,16 @@ using Acr.XamForms.UserDialogs;
 using Xamarin.Forms;
 using Xamarin.Forms.Labs.Services;
 using XamarinStore.Forms.Data;
+using XamarinStore.Forms.Helpers;
 using XamarinStore.Forms.Models;
+using XamarinStore.Forms.Views;
 
 namespace XamarinStore.Forms.ViewModels
 {
 	public class LoginPageViewModel : BaseViewModel
 	{
 		//TODO : add your xamarin account email
-		public const string XAMARIN_ACCOUNT_EMAIL = "mialon.julien@gmail.com";
+		public const string XAMARIN_ACCOUNT_EMAIL = "";
 
 		private bool _isInstructionsEnabled;
 
@@ -65,7 +67,9 @@ namespace XamarinStore.Forms.ViewModels
 				dialog.Hide();
 				if (canContinue.Success)
 				{
-					dialogService.Toast("Connected ! Order OK");
+					#pragma warning disable 4014
+					Navigation.PushAsync(NavigationHelper.GetPage<ShippingDetailsPage>());
+					#pragma warning restore 4014
 				}
 				else
 				{

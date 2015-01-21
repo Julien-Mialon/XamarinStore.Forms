@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:userControls="clr-namespace:XamarinStore.Forms.UserControls;assembly=XamarinStore.Forms"
+             xmlns:vm="clr-namespace:XamarinStore.Forms.ViewModels;assembly=XamarinStore.Forms"
+             xmlns:converters="clr-namespace:XamarinStore.Forms.Converters;assembly=XamarinStore.Forms"
+             x:Class="XamarinStore.Forms.Views.OrderSummaryPage">
+	<ContentPage.BindingContext>
+		<vm:OrderSummaryPageViewModel />
+	</ContentPage.BindingContext>
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<!-- place your resources there -->
+			<converters:StringFormatConverter x:Key="StringFormatConverter" />
+		</ResourceDictionary>
+	</ContentPage.Resources>
+
+	<Grid VerticalOptions="FillAndExpand">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+
+		<userControls:TopBarUserControl Grid.Row="0" />
+		
+		<StackLayout Grid.Row="1"
+					 Orientation="Vertical"
+					 Padding="16,48,16,0">
+			<Label Text="Order Summary"
+				   FontAttributes="Bold"
+				   FontSize="18"
+				   />
+			<Label Text="Well done, your order has been placed!"
+				   FontAttributes="Italic"
+				   FontSize="14"
+				   />
+			<Label Text="{Binding OrderResult.OrderNumber, Converter={StaticResource StringFormatConverter}, ConverterParameter='Order number : {0}'}"
+				   FontSize="14"
+				   />
+		</StackLayout>
+	</Grid>
+</ContentPage>

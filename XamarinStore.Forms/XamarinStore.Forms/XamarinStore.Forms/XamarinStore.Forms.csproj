@@ -36,6 +36,7 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="Converters\BooleanNegationConverter.cs" />
+    <Compile Include="Converters\StringFormatConverter.cs" />
     <Compile Include="Converters\StringToUpperConverter.cs" />
     <Compile Include="Converters\ToStringConverter.cs" />
     <Compile Include="Helpers\ImageHelper.cs" />
@@ -51,7 +52,9 @@
     <Compile Include="ViewModels\BasketPageViewModel.cs" />
     <Compile Include="ViewModels\HomePageViewModel.cs" />
     <Compile Include="ViewModels\LoginPageViewModel.cs" />
+    <Compile Include="ViewModels\OrderSummaryPageViewModel.cs" />
     <Compile Include="ViewModels\ProductDetailPageViewModel.cs" />
+    <Compile Include="ViewModels\ShippingDetailsPageViewModel.cs" />
     <Compile Include="Views\BasketPage.xaml.cs">
       <DependentUpon>BasketPage.xaml</DependentUpon>
     </Compile>
@@ -61,8 +64,14 @@
     <Compile Include="Views\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\OrderSummaryPage.xaml.cs">
+      <DependentUpon>OrderSummaryPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ProductDetailsPage.xaml.cs">
       <DependentUpon>ProductDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShippingDetailsPage.xaml.cs">
+      <DependentUpon>ShippingDetailsPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -131,6 +140,18 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="UserControls\TopBarUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ShippingDetailsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\OrderSummaryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

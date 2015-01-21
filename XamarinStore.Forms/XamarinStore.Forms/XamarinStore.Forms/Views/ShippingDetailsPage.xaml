@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:userControls="clr-namespace:XamarinStore.Forms.UserControls;assembly=XamarinStore.Forms"
+             xmlns:vm="clr-namespace:XamarinStore.Forms.ViewModels;assembly=XamarinStore.Forms"
+             x:Class="XamarinStore.Forms.Views.ShippingDetailsPage">
+	<ContentPage.BindingContext>
+		<vm:ShippingDetailsPageViewModel />
+	</ContentPage.BindingContext>
+
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<!-- put resources here -->
+		</ResourceDictionary>
+	</ContentPage.Resources>
+
+	<Grid VerticalOptions="FillAndExpand">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+
+		<userControls:TopBarUserControl Grid.Row="0" />
+
+		<StackLayout Grid.Row="1"
+					 Orientation="Vertical"
+					 VerticalOptions="FillAndExpand"
+					 HorizontalOptions="FillAndExpand"
+					 Padding="16,8,16,8">
+			<Label Text="SHIPPING INFORMATION"
+				   FontAttributes="Bold"
+				   />
+			<BoxView HorizontalOptions="FillAndExpand"
+					 HeightRequest="2"
+					 BackgroundColor="{StaticResource GrayColor}"
+					 />
+			
+			<ScrollView Orientation="Vertical"
+						HorizontalOptions="FillAndExpand">
+				<StackLayout Orientation="Vertical">
+					<Entry Text="{Binding CurrentUser.FirstName, Mode=TwoWay}"
+						   Placeholder="First name"
+						   HorizontalOptions="FillAndExpand"
+						   />
+					<Entry Text="{Binding CurrentUser.LastName, Mode=TwoWay}"
+						   Placeholder="Last name"
+						   HorizontalOptions="FillAndExpand"
+						   />
+					<Entry Text="{Binding CurrentUser.Phone, Mode=TwoWay}"
+						   Placeholder="Phone number"
+						   HorizontalOptions="FillAndExpand"
+						   />
+					<Entry Text="{Binding CurrentUser.Address, Mode=TwoWay}"
+						   Placeholder="Street address 1"
+						   HorizontalOptions="FillAndExpand"
+						   />
+					<Entry Text="{Binding CurrentUser.Address2, Mode=TwoWay}"
+						   Placeholder="Street address 2"
+						   HorizontalOptions="FillAndExpand"
+						   />
+					<Entry Text="{Binding CurrentUser.City, Mode=TwoWay}"
+						   Placeholder="City"
+						   HorizontalOptions="FillAndExpand"
+						   />
+					<Entry Text="{Binding CurrentUser.ZipCode, Mode=TwoWay}"
+						   Placeholder="Postal code"
+						   HorizontalOptions="FillAndExpand"
+						   />
+					<Entry Text="{Binding Country, Mode=TwoWay}"
+						   Placeholder="Country"
+						   HorizontalOptions="FillAndExpand"
+						   />
+					<Entry Text="{Binding CurrentUser.State, Mode=TwoWay}"
+						   Placeholder="State"
+						   HorizontalOptions="FillAndExpand"
+						   />
+					<Button Text="Place Holder"
+							TextColor="White"
+							BackgroundColor="{StaticResource GreenColor}"
+							HorizontalOptions="FillAndExpand"
+							Command="{Binding PlaceOrderCommand}"
+							/>
+					</StackLayout>
+			</ScrollView>
+		</StackLayout>
+	</Grid>
+</ContentPage>

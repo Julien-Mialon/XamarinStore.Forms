@@ -66,10 +66,9 @@ namespace XamarinStore.Forms.Data
 				try
 				{
 					string extraParams = "";
-					//TODO: Get a Monkey!!!
-					extraParams = "?includeMonkeys=true";
+					//Want to get an extra Monkey ? Uncomment the next line ;-)
+					//extraParams = "?includeMonkeys=true";
 
-					//TODO : use http client
 					var request = CreateRequest("products" + extraParams);
 					string response = await ReadResponseText(request);
 
