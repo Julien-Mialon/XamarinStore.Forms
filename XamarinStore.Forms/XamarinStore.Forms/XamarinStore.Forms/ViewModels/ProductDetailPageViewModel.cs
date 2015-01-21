@@ -9,7 +9,7 @@ using XamarinStore.Forms.Models;
 
 namespace XamarinStore.Forms.ViewModels
 {
-	public class ProductDetailViewModel : BaseViewModel
+	public class ProductDetailPageViewModel : BaseViewModel
 	{
 		private Product _currentProduct;
 		private ImageSource _productImageSource;
@@ -41,7 +41,7 @@ namespace XamarinStore.Forms.ViewModels
 
 		public ICommand OrderCommand { get; private set; }
 
-		public ProductDetailViewModel()
+		public ProductDetailPageViewModel()
 		{
 			OrderCommand = new Command(OrderAction);
 		}

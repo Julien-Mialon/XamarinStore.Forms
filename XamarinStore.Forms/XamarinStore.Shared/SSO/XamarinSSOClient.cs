@@ -26,7 +26,7 @@ namespace XamarinStore.Forms.SSO {
 	        HttpRequestMessage request = RequestMaker.SetupRequest(endpoint, method);
 	        if (body != null)
 	        {
-		        request.Content = new StringContent(body, encoding);
+		        request.Content = new StringContent(body, encoding, "application/x-www-form-urlencoded");
 	        }
 	        return await RequestMaker.ExecuteRequestAsync(request);
         }

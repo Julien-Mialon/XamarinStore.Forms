@@ -21,7 +21,7 @@ namespace XamarinStore.Shared.Data
 			_httpClient = new HttpClient(new HttpClientHandler()
 			{
 				PreAuthenticate = true,
-				UseDefaultCredentials = true,
+				UseDefaultCredentials = false,
 				Credentials = new NetworkCredential(API_KEY, ""),
 			});
 			_httpClient.DefaultRequestHeaders.Add("User-Agent", USER_AGENT);
@@ -33,6 +33,10 @@ namespace XamarinStore.Shared.Data
 	    {
 		    HttpMethod httpMethod = new HttpMethod(method);
 		    HttpRequestMessage request = new HttpRequestMessage(httpMethod, endpoint);
+
+			
+			request.Headers.Add("User-Agent", USER_AGENT);
+			request.Headers.Add("Authorization", "Basic " + Convert.ToBase64String(Encoding.UTF8.GetBytes(API_KEY + ":")));
 
 		    return request;
 	    }

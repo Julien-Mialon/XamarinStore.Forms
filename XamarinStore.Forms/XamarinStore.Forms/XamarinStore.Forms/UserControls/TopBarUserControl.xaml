@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<StackLayout xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Xamarin.Forms.Labs.Controls;assembly=Xamarin.Forms.Labs"
+             x:Class="XamarinStore.Forms.UserControls.TopBarUserControl"
+			 BackgroundColor="White"
+			 HorizontalOptions="FillAndExpand"
+			 Padding="16,16,16,8"
+			 Orientation="Horizontal"
+			 >
+	<StackLayout HorizontalOptions="StartAndExpand"
+				 Orientation="Horizontal">
+		<StackLayout.Resources>
+			<ResourceDictionary>
+				<x:Double x:Key="LogoSize">38</x:Double>
+
+				<OnPlatform x:Key="LogoSource"
+							x:TypeArguments="ImageSource"
+							Android="xamarin_logo.png"
+							WinPhone="xamarin_logo.png" />
+			</ResourceDictionary>
+		</StackLayout.Resources>
+		
+		<Image HorizontalOptions="Center"
+			   VerticalOptions="Center"
+			   Aspect="AspectFit"
+			   HeightRequest="{StaticResource LogoSize}"
+			   WidthRequest="{StaticResource LogoSize}"
+			   Source="{StaticResource LogoSource}"
+			   />
+		<Label Text="Xamarin Store"
+			   FontAttributes="Bold"
+			   FontSize="18"
+			   TextColor="{StaticResource GrayColor}"
+			   VerticalOptions="Center"
+			   />
+	</StackLayout>
+	
+	<StackLayout HorizontalOptions="EndAndExpand"
+				 Orientation="Horizontal"
+				 IsVisible="{Binding IsBasketEnabled}"
+				 >
+		<controls:ImageButton Image="basket"
+							  Orientation="ImageToLeft"
+							  BackgroundColor="White"
+							  TextColor="Black"
+							  Text="{Binding BasketCountText}"
+							  FontSize="16"
+							  Command="{Binding OpenBasketCommand}"
+							  />
+	</StackLayout>
+</StackLayout>

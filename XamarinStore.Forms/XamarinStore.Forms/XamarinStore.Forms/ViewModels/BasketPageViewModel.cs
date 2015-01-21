@@ -5,6 +5,7 @@ using Xamarin.Forms;
 using XamarinStore.Forms.Data;
 using XamarinStore.Forms.Helpers;
 using XamarinStore.Forms.UIModels;
+using XamarinStore.Forms.Views;
 
 namespace XamarinStore.Forms.ViewModels
 {
@@ -22,6 +23,7 @@ namespace XamarinStore.Forms.ViewModels
 
 		public BasketPageViewModel()
 		{
+			IsBasketEnabled = false;
 			CheckoutCommand = new Command(CheckoutAction);
 
 			Products = WebService.Shared.CurrentOrder.Products.Select(x =>
@@ -41,7 +43,7 @@ namespace XamarinStore.Forms.ViewModels
 
 		private void CheckoutAction()
 		{
-			
+			Navigation.PushAsync(NavigationHelper.GetPage<LoginPage>());
 		}
 	}
 }

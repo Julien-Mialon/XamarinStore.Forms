@@ -35,6 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="Converters\BooleanNegationConverter.cs" />
     <Compile Include="Converters\StringToUpperConverter.cs" />
     <Compile Include="Converters\ToStringConverter.cs" />
     <Compile Include="Helpers\ImageHelper.cs" />
@@ -42,16 +43,23 @@
     <Compile Include="UIModels\AbstractUIModel.cs" />
     <Compile Include="UIModels\NotifierBase.cs" />
     <Compile Include="UIModels\ProductUIModel.cs" />
+    <Compile Include="UserControls\TopBarUserControl.xaml.cs">
+      <DependentUpon>TopBarUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewElements\BindablePicker.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\BasketPageViewModel.cs" />
     <Compile Include="ViewModels\HomePageViewModel.cs" />
-    <Compile Include="ViewModels\ProductDetailViewModel.cs" />
+    <Compile Include="ViewModels\LoginPageViewModel.cs" />
+    <Compile Include="ViewModels\ProductDetailPageViewModel.cs" />
     <Compile Include="Views\BasketPage.xaml.cs">
       <DependentUpon>BasketPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ProductDetailsPage.xaml.cs">
       <DependentUpon>ProductDetailsPage.xaml</DependentUpon>
@@ -64,6 +72,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Acr.XamForms.UserDialogs">
+      <HintPath>..\..\packages\Acr.XamForms.UserDialogs.3.0.0\lib\portable-win+net45+MonoAndroid10+Xamarin.iOS10+wp8\Acr.XamForms.UserDialogs.dll</HintPath>
+    </Reference>
     <Reference Include="ExifLib">
       <HintPath>..\..\packages\ExifLib.PCL.1.0.0\lib\portable-net45+sl50+win+WindowsPhoneApp81+wp80+MonoAndroid10+MonoTouch10\ExifLib.dll</HintPath>
     </Reference>
@@ -108,6 +119,18 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\ProductDetailsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UserControls\TopBarUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

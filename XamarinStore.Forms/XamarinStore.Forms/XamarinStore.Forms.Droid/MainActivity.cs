@@ -1,4 +1,6 @@
-﻿using Android.App;
+﻿using Acr.XamForms.UserDialogs;
+using Acr.XamForms.UserDialogs.Droid;
+using Android.App;
 using Android.Content.PM;
 using Android.OS;
 using Xamarin.Forms.Labs;
@@ -19,6 +21,8 @@ namespace XamarinStore.Forms
 
 			IDependencyContainer container = new SimpleContainer();
 			container.Register<IDevice>(t => AndroidDevice.CurrentDevice);
+			container.Register<IUserDialogService>(t => new UserDialogService());
+
 
 			Resolver.SetResolver(container.GetResolver());
 

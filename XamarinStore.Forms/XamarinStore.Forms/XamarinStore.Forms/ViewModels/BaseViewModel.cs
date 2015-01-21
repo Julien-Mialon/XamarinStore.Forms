@@ -12,7 +12,14 @@ namespace XamarinStore.Forms.ViewModels
 	public class BaseViewModel : NotifierBase
 	{
 		private string _basketCountText;
-		private Dictionary<string, object> _parameters; 
+		private Dictionary<string, object> _parameters;
+		private bool _isBasketEnabled;
+
+		public bool IsBasketEnabled
+		{
+			get { return _isBasketEnabled; }
+			set { SetProperty<bool>(ref _isBasketEnabled, value); }
+		}
 
 		public string BasketCountText
 		{
@@ -27,6 +34,7 @@ namespace XamarinStore.Forms.ViewModels
 		public BaseViewModel()
 		{
 			BasketCountText = "No items...";
+			IsBasketEnabled = true;
 
 			WebService.Shared.CurrentOrder.ProductsChanged += OnOrderChanged;
 			OpenBasketCommand = new Command(OpenBasketAction);

@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:XamarinStore.Forms.ViewModels;assembly=XamarinStore.Forms"
+             xmlns:userControls="clr-namespace:XamarinStore.Forms.UserControls;assembly=XamarinStore.Forms"
+             xmlns:converters="clr-namespace:XamarinStore.Forms.Converters;assembly=XamarinStore.Forms"
+             x:Class="XamarinStore.Forms.Views.LoginPage">
+	<ContentPage.BindingContext>
+		<vm:LoginPageViewModel />
+	</ContentPage.BindingContext>
+
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<!-- put resources here -->
+			<OnPlatform x:TypeArguments="ImageSource"
+						x:Key="ConfigureImageSource"
+						Android="configure.png"
+						WinPhone="configure.png"
+						/>
+			<converters:BooleanNegationConverter x:Key="BooleanNegationConverter" />
+		</ResourceDictionary>
+	</ContentPage.Resources>
+
+	<Grid VerticalOptions="FillAndExpand">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+
+		<userControls:TopBarUserControl Grid.Row="0" />
+
+		<StackLayout Grid.Row="1"
+					 Padding="16,48,16,0"
+					 IsVisible="{Binding IsInstructionsEnabled}"
+					 Orientation="Vertical"
+					 HorizontalOptions="CenterAndExpand">
+			<Image HorizontalOptions="Center"
+				   Aspect="AspectFit"
+				   Source="{StaticResource ConfigureImageSource}"
+				   />
+			<StackLayout HorizontalOptions="CenterAndExpand"
+						 Orientation="Horizontal">
+				<Label Text="public const"
+					   TextColor="#FF48D1CC"
+					   />
+				<Label Text="string"
+					   TextColor="#FF1E90FF"
+					   />
+				<Label Text="XAMARIN_ACCOUNT_EMAIL = "
+					   TextColor="Black"
+					   />
+				<Label Text="{Binding SuggestionText}"
+					   TextColor="Red"
+					   />
+				<Label Text=";"
+					   TextColor="Black"
+					   />
+			</StackLayout>
+			<Label LineBreakMode="WordWrap"
+				   XAlign="Center"
+				   TextColor="Black"
+				   HorizontalOptions="CenterAndExpand">
+				<Label.Text>
+					A small task is required to get your free shirt.
+					Please add your Xamarin account email address to LoginPageViewModel.cs then revisit this screen.
+				</Label.Text>
+			</Label>
+		</StackLayout>
+	
+		<StackLayout Grid.Row="1"
+					 Padding="16,48,16,0"
+					 IsVisible="{Binding IsInstructionsEnabled, Converter={StaticResource BooleanNegationConverter}}"
+					 HorizontalOptions="FillAndExpand"
+					 Orientation="Vertical">
+			<Entry IsEnabled="False"
+				   Text="{Binding Login, Mode=OneWay}"
+				   HorizontalOptions="FillAndExpand"
+				   />
+			<Entry Text="{Binding Password, Mode=OneWayToSource}"
+				   HorizontalOptions="FillAndExpand"
+				   IsPassword="True"
+				   />
+			<Button Text="Sign In"
+					BackgroundColor="{StaticResource GreenColor}"
+					TextColor="White"
+					HorizontalOptions="FillAndExpand"
+					Command="{Binding LoginCommand}"
+					/>
+		</StackLayout>
+	</Grid>
+</ContentPage>

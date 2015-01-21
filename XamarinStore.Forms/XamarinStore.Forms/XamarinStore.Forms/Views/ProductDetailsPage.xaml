@@ -2,20 +2,16 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:XamarinStore.Forms.ViewModels;assembly=XamarinStore.Forms"
-             xmlns:controls="clr-namespace:Xamarin.Forms.Labs.Controls;assembly=Xamarin.Forms.Labs"
-             xmlns:viewElements="clr-namespace:XamarinStore.Forms.ViewElements;assembly=XamarinStore.Forms"
+			 xmlns:viewElements="clr-namespace:XamarinStore.Forms.ViewElements;assembly=XamarinStore.Forms"
+             xmlns:userControls="clr-namespace:XamarinStore.Forms.UserControls;assembly=XamarinStore.Forms"
              x:Class="XamarinStore.Forms.Views.ProductDetailsPage"
 			 BackgroundColor="White">
 	<ContentPage.BindingContext>
-		<vm:ProductDetailViewModel />
+		<vm:ProductDetailPageViewModel />
 	</ContentPage.BindingContext>
 	<ContentPage.Resources>
 		<ResourceDictionary>
 			<!-- put resources here -->
-			<OnPlatform x:Key="LogoImage"
-						x:TypeArguments="ImageSource"
-						Android="xamarin_logo.png"
-						WinPhone="xamarin_logo.png" />
 		</ResourceDictionary>
 	</ContentPage.Resources>
 
@@ -26,39 +22,7 @@
 			<RowDefinition Height="Auto" />
 		</Grid.RowDefinitions>
 
-		<StackLayout BackgroundColor="White"
-					 Grid.Row="0"
-					 HorizontalOptions="FillAndExpand"
-					 Padding="16,16,16,8"
-					 Orientation="Horizontal"
-					 >
-			<StackLayout HorizontalOptions="StartAndExpand"
-						 Orientation="Horizontal">
-				<Image Source="{StaticResource LogoImage}"
-					   HorizontalOptions="Center"
-					   VerticalOptions="Center"
-					   Aspect="AspectFit"
-					   HeightRequest="26"
-					   WidthRequest="26"
-					   />
-				<Label TextColor="Black"
-					   Text="Xamarin Store"
-					   FontSize="16"
-					   VerticalOptions="Center"
-					   />
-			</StackLayout>
-			<StackLayout HorizontalOptions="EndAndExpand"
-						 Orientation="Horizontal">
-				<controls:ImageButton Image="basket"
-									  Orientation="ImageToLeft"
-									  BackgroundColor="White"
-									  TextColor="Black"
-									  Text="{Binding BasketCountText}"
-									  FontSize="16"
-									  Command="{Binding OpenBasketCommand}"
-									  />
-			</StackLayout>
-		</StackLayout>
+		<userControls:TopBarUserControl Grid.Row="0" />
 
 		<Image Aspect="AspectFill"
 				Source="{Binding ProductImageSource}"
@@ -74,20 +38,20 @@
 								Padding="0,0,0,8">
 					<Label HorizontalOptions="StartAndExpand"
 							Text="{Binding CurrentProduct.Name}"
-							TextColor="#FFB455B6"
+							TextColor="{StaticResource PurpleColor}"
 							FontSize="24"
 						/>
 
 					<Label HorizontalOptions="EndAndExpand"
 							Text="{Binding CurrentProduct.PriceDescription}"
-							TextColor="#FF3498DB"
+							TextColor="{StaticResource BlueColor}"
 							FontSize="24"
 							FontAttributes="Bold"
 						/>
 				</StackLayout>
 
 				<StackLayout Padding="0,0,0,8">
-					<Label TextColor="#FF738182"
+					<Label TextColor="{StaticResource GrayColor}"
 							Text="{Binding CurrentProduct.Description}"
 							FontSize="14"
 							/>
@@ -148,7 +112,7 @@
 							Text="Add to Basket"
 							HorizontalOptions="FillAndExpand"
 							TextColor="White"
-							BackgroundColor="#FF77D065"
+							BackgroundColor="{StaticResource GreenColor}"
 							Command="{Binding OrderCommand}"
 							/>
 				</Grid>
