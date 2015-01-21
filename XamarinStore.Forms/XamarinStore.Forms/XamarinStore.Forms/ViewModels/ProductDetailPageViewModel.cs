@@ -3,6 +3,7 @@ using System.Linq;
 using System.Windows.Input;
 using Xamarin.Forms;
 using XamarinStore.Forms.Data;
+using XamarinStore.Forms.Helpers;
 using XamarinStore.Forms.Models;
 using XLabs.Ioc;
 using XLabs.Platform.Device;
@@ -64,7 +65,8 @@ namespace XamarinStore.Forms.ViewModels
 			CurrentSize = CurrentProduct.Sizes.First();
 			CurrentColor = CurrentProduct.Colors.First();
 
-			ProductImageSource = CurrentProduct.ImageForSize(Resolver.Resolve<IDevice>().Display.Width);
+			int width = SizeHelper.Width;
+			ImageHelper.SetImageSource(this, (model, source) => model.ProductImageSource = source, CurrentProduct.ImageForSize(width));
 		}
 	}
 }

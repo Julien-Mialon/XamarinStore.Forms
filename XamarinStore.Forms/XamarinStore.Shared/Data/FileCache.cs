@@ -61,21 +61,27 @@ namespace XamarinStore.Forms.Data
 
 		static async Task<IFile> DownloadFileTaskAsync(string url, string filename, HttpClient client)
 		{
-			Stream inputStream = await client.GetStreamAsync(url);
-			IFile output = await FileSystem.Current.LocalStorage.CreateFileAsync(filename, CreationCollisionOption.ReplaceExisting);
-			Stream outputStream = await output.OpenAsync(FileAccess.ReadAndWrite);
-			using (outputStream)
+			try
 			{
-				inputStream.CopyTo(outputStream);
-			}
-			outputStream = null;
+				Stream inputStream = await client.GetStreamAsync(url);
+				IFile output = await FileSystem.Current.LocalStorage.CreateFileAsync(filename, CreationCollisionOption.ReplaceExisting);
+				Stream outputStream = await output.OpenAsync(FileAccess.ReadAndWrite);
+				using (outputStream)
+				{
+					await inputStream.CopyToAsync(outputStream);
+				}
+				outputStream = null;
+				lock (locker)
+				{
+					RemoveTask(filename);
+				}
 
-			lock(locker)
-			{
-				RemoveTask(filename);
+				return output;
 			}
-
-			return output;
+			catch (Exception ex)
+			{	
+				throw;
+			}
 		}
 
 		static void RemoveTask(string fileName)

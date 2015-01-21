@@ -40,6 +40,7 @@
     <Compile Include="Converters\StringToUpperConverter.cs" />
     <Compile Include="Converters\ToStringConverter.cs" />
     <Compile Include="Helpers\ImageHelper.cs" />
+    <Compile Include="Helpers\SizeHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UIModels\AbstractUIModel.cs" />
     <Compile Include="UIModels\NotifierBase.cs" />

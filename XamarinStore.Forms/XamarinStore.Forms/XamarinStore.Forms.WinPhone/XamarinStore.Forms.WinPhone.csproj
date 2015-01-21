@@ -125,6 +125,7 @@
   <ItemGroup>
     <Content Include="basket.png" />
     <Content Include="configure.png" />
+    <Content Include="empty_basket.png" />
     <Content Include="icon.png" />
     <Content Include="README_FIRST.txt" />
     <Content Include="SplashScreenImage.jpg">
@@ -176,6 +177,9 @@
     </Reference>
     <Reference Include="ExifLib">
       <HintPath>..\..\packages\ExifLib.PCL.1.0.0\lib\portable-net45+sl50+win+WindowsPhoneApp81+wp80+MonoAndroid10+MonoTouch10\ExifLib.dll</HintPath>
+    </Reference>
+    <Reference Include="JeffWilcox.PhoneThemeManager">
+      <HintPath>..\..\packages\PhoneThemeManager.2.1.2\lib\windowsphone8\JeffWilcox.PhoneThemeManager.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Phone.Controls.Toolkit">
       <HintPath>..\..\packages\WPtoolkit.4.2013.08.16\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>

@@ -12,7 +12,13 @@ namespace XamarinStore.Forms.ViewModels
 	public class BasketPageViewModel : BaseViewModel
 	{
 		private List<ProductUIModel> _products;
+		private bool _isBasketEmpty;
 
+		public bool IsBasketEmpty
+		{
+			get { return _isBasketEmpty; }
+			set { SetProperty<bool>(ref _isBasketEmpty, value); }
+		}
 		public List<ProductUIModel> Products
 		{
 			get { return _products; }
@@ -39,6 +45,8 @@ namespace XamarinStore.Forms.ViewModels
 
 				return result;
 			}).ToList();
+
+			IsBasketEmpty = Products.Count == 0;
 		}
 
 		private void CheckoutAction()

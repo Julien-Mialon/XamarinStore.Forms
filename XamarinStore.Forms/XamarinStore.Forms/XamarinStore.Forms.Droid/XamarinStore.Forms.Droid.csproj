@@ -152,6 +152,7 @@
     <AndroidResource Include="Resources\drawable\xamarin_logo.png" />
     <AndroidResource Include="Resources\values\themes.xml" />
     <AndroidResource Include="Resources\drawable\configure.png" />
+    <AndroidResource Include="Resources\drawable\empty_basket.png" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="json.net">

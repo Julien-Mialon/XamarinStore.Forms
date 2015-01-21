@@ -66,10 +66,10 @@ namespace XamarinStore.Forms.ViewModels
 		{
 			List<Product> products = await WebService.Shared.GetProducts();
 
-			int screenWidth = Resolver.Resolve<IDevice>().Display.Width;
-			#pragma warning disable 4014
-			WebService.Shared.PreloadImages(screenWidth);
-			#pragma warning restore 4014
+			int screenWidth = SizeHelper.Width;
+			//#pragma warning disable 4014
+			//WebService.Shared.PreloadImages(screenWidth);
+			//#pragma warning restore 4014
 
 			ProductList = products.Select(x =>
 			{

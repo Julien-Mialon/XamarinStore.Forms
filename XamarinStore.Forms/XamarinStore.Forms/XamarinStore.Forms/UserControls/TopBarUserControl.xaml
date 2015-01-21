@@ -8,18 +8,22 @@
 			 Padding="16,16,16,8"
 			 Orientation="Horizontal"
 			 >
+	<StackLayout.Resources>
+		<ResourceDictionary>
+			<x:Double x:Key="LogoSize">38</x:Double>
+
+			<OnPlatform x:Key="BasketSource"
+						x:TypeArguments="FileImageSource"
+						Android="basket.png"
+						WinPhone="basket.png" />
+			<OnPlatform x:Key="LogoSource"
+						x:TypeArguments="ImageSource"
+						Android="xamarin_logo.png"
+						WinPhone="xamarin_logo.png" />
+		</ResourceDictionary>
+	</StackLayout.Resources>
 	<StackLayout HorizontalOptions="StartAndExpand"
 				 Orientation="Horizontal">
-		<StackLayout.Resources>
-			<ResourceDictionary>
-				<x:Double x:Key="LogoSize">38</x:Double>
-
-				<OnPlatform x:Key="LogoSource"
-							x:TypeArguments="ImageSource"
-							Android="xamarin_logo.png"
-							WinPhone="xamarin_logo.png" />
-			</ResourceDictionary>
-		</StackLayout.Resources>
 		
 		<Image HorizontalOptions="Center"
 			   VerticalOptions="Center"
@@ -40,7 +44,7 @@
 				 Orientation="Horizontal"
 				 IsVisible="{Binding IsBasketEnabled}"
 				 >
-		<controls:ImageButton Image="basket"
+		<controls:ImageButton Image="{StaticResource BasketSource}"
 							  Orientation="ImageToLeft"
 							  BackgroundColor="White"
 							  TextColor="Black"

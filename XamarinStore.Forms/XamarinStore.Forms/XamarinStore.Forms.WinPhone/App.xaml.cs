@@ -229,8 +229,12 @@ namespace XamarinStore.Forms.WinPhone
 
 		private void SetupIoC()
 		{
+			ThemeManager.ToLightTheme();
+
 			SimpleContainer resolverContainer = new SimpleContainer();
 			XFormsAppWP app = new XFormsAppWP(this);
+
+			IDevice e = WindowsPhoneDevice.CurrentDevice;
 			
 			resolverContainer.Register<IDevice>(t => WindowsPhoneDevice.CurrentDevice);
 			resolverContainer.Register<IUserDialogService>(t => new UserDialogService());

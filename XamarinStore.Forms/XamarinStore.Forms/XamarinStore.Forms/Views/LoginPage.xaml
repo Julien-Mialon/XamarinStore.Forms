@@ -34,7 +34,7 @@
 					 Padding="16,48,16,0"
 					 IsVisible="{Binding IsInstructionsEnabled}"
 					 Orientation="Vertical"
-					 HorizontalOptions="CenterAndExpand">
+					 HorizontalOptions="FillAndExpand">
 			<Image HorizontalOptions="Center"
 				   Aspect="AspectFit"
 				   Source="{StaticResource ConfigureImageSource}"
@@ -44,7 +44,7 @@
 						 >
 				<StackLayout.Resources>
 					<ResourceDictionary>
-						<x:Double x:Key="FontSizeRes">12</x:Double>
+						<x:Double x:Key="FontSizeRes">14</x:Double>
 					</ResourceDictionary>
 				</StackLayout.Resources>
 				<Label Text="const"
@@ -71,10 +71,10 @@
 			<Label LineBreakMode="WordWrap"
 				   XAlign="Center"
 				   TextColor="Black"
-				   HorizontalOptions="CenterAndExpand">
+				   HorizontalOptions="FillAndExpand">
 				<Label.Text>
-					A small task is required to get your free shirt.
-					Please add your Xamarin account email address to LoginPageViewModel.cs then revisit this screen.
+A small task is required to get your free shirt.
+Please add your Xamarin account email address to LoginPageViewModel.cs then revisit this screen.
 				</Label.Text>
 			</Label>
 		</StackLayout>

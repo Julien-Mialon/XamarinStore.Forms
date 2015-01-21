@@ -14,6 +14,13 @@
 		<ResourceDictionary>
 			<converters:ToStringConverter x:Key="ToStringConverter" />
 			<converters:StringToUpperConverter x:Key="StringToUpperConverter" />
+			<converters:BooleanNegationConverter x:Key="BooleanNegationConverter" />
+
+			<OnPlatform x:TypeArguments="ImageSource"
+						x:Key="EmptyBasketImageSource"
+						Android="empty_basket.png"
+						WinPhone="empty_basket.png"
+						/>
 		</ResourceDictionary>
 	</ContentPage.Resources>
 
@@ -26,10 +33,31 @@
 
 		<userControls:TopBarUserControl Grid.Row="0" />
 
+		<StackLayout Grid.Row="1"
+					 Padding="16,48,16,0"
+					 IsVisible="{Binding IsBasketEmpty}"
+					 Orientation="Vertical"
+					 HorizontalOptions="FillAndExpand">
+			<Image HorizontalOptions="Center"
+				   Aspect="AspectFit"
+				   Source="{StaticResource EmptyBasketImageSource}"
+				   />
+			<Label LineBreakMode="WordWrap"
+				   TextColor="Black"
+				   HorizontalOptions="FillAndExpand"
+				   XAlign="Center">
+				<Label.Text>
+Your basket is empty :-(
+Go back and add some items !
+				</Label.Text>
+			</Label>
+		</StackLayout>
+
 		<ListView ItemsSource="{Binding Products}"
 				  Grid.Row="1"
 				  HasUnevenRows="True"
 				  ItemSelected="ListView_OnItemSelected"
+				  IsVisible="{Binding IsBasketEmpty, Converter={StaticResource BooleanNegationConverter}}"
 				  >
 			<ListView.ItemTemplate>
 				<DataTemplate>
@@ -84,7 +112,9 @@
 		</ListView>
 
 		<StackLayout Grid.Row="2"
-					 Padding="16,16,16,16">
+					 Padding="16,16,16,16"
+					 IsVisible="{Binding IsBasketEmpty, Converter={StaticResource BooleanNegationConverter}}"
+					 >
 			<Button Text="Checkout"
 					HorizontalOptions="FillAndExpand"
 					TextColor="White"
