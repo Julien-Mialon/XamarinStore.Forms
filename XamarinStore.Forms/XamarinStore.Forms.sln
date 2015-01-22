@@ -13,11 +13,17 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "XamarinStore.Shared", "Xama
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinStore.Forms", "XamarinStore.Forms\XamarinStore.Forms\XamarinStore.Forms.csproj", "{D6042EC4-7FA7-4160-999C-F47380F3DD96}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{9A918FD9-2ADF-43FA-8D8D-F3644164FD5F}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		XamarinStore.Shared\XamarinStore.Shared.projitems*{6d3ccf33-a627-4657-80d3-476ed218d87a}*SharedItemsImports = 13
 		XamarinStore.Shared\XamarinStore.Shared.projitems*{208f1e15-c99c-4306-9c3d-320076f45b43}*SharedItemsImports = 4
-		XamarinStore.Shared\XamarinStore.Shared.projitems*{1805e007-e844-4a81-b07f-0fda6f22ba65}*SharedItemsImports = 4
 		XamarinStore.Shared\XamarinStore.Shared.projitems*{d6042ec4-7fa7-4160-999c-f47380f3dd96}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

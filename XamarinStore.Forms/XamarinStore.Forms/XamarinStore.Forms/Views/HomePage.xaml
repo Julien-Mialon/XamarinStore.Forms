@@ -40,10 +40,10 @@
 			</StackLayout.Resources>
 			<ListView ItemsSource="{Binding ProductList}"
 					  VerticalOptions="FillAndExpand"
-					  HasUnevenRows="{StaticResource UnevenRowsResource}"
 					  SelectedItem="{Binding SelectedProduct, Mode=TwoWay}"
 					  RowHeight="{Binding ImageHeight}"
 					  >
+					  <!--HasUnevenRows="{StaticResource UnevenRowsResource}"-->
 				<ListView.ItemTemplate>
 					<DataTemplate>
 						<ViewCell>
