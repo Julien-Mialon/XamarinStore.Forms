@@ -36,5 +36,15 @@ namespace XamarinStore.Forms.Helpers
 				return display.Height;
 			}
 		}
+
+		public static int ImageHeight
+		{
+			get { return (int)(Height*0.25); }
+		}
+
+		public static double ImageHeightDouble
+		{
+			get { return ImageHeight; }
+		}
 	}
 }

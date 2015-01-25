@@ -17,10 +17,6 @@ namespace XamarinStore.Forms.ViewModels
 		private List<ProductUIModel> _productList;
 		private ProductUIModel _selectedProduct;
 
-		public double ImageHeight
-		{
-			get { return SizeHelper.Height * 0.2; }
-		}
 
 		public ProductUIModel SelectedProduct
 		{

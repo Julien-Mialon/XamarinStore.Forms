@@ -1,4 +1,5 @@
 ﻿using Xamarin.Forms;
+using XamarinStore.Forms.Helpers;
 
 namespace XamarinStore.Forms.Views
 {
@@ -7,7 +8,6 @@ namespace XamarinStore.Forms.Views
 		public HomePage()
 		{
 			InitializeComponent();
-			
 		}
 	}
 }

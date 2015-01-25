@@ -4,6 +4,7 @@
 			 xmlns:vm="clr-namespace:XamarinStore.Forms.ViewModels;assembly=XamarinStore.Forms"
 			 xmlns:conv="clr-namespace:XamarinStore.Forms.Converters;assembly=XamarinStore.Forms"
 			 xmlns:userControls="clr-namespace:XamarinStore.Forms.UserControls;assembly=XamarinStore.Forms"
+			 xmlns:helpers="clr-namespace:XamarinStore.Forms.Helpers;assembly=XamarinStore.Forms"
 			 x:Class="XamarinStore.Forms.Views.HomePage"
 			 BackgroundColor="White"
 			 >
@@ -34,16 +35,18 @@
 				<ResourceDictionary>
 					<OnPlatform x:Key="UnevenRowsResource"
 								x:TypeArguments="x:Boolean"
-								Android="True"
+								Android="False"
 								WinPhone="True" 
 								iOS="False"
 								/>
 				</ResourceDictionary>
 			</StackLayout.Resources>
+			
 			<ListView ItemsSource="{Binding ProductList}"
 					  VerticalOptions="FillAndExpand"
 					  SelectedItem="{Binding SelectedProduct, Mode=TwoWay}"
-					  RowHeight="{Binding ImageHeight}"
+					  RowHeight="{x:Static helpers:SizeHelper.ImageHeight}"
+					  x:Name="ListView"
 					  >
 					  <!--HasUnevenRows="{StaticResource UnevenRowsResource}"-->
 				<ListView.ItemTemplate>
@@ -53,7 +56,8 @@
 								<Grid>
 									<Image Source="{Binding ProductImage}"
 										   Aspect="AspectFill"
-									   />
+										   HeightRequest="{x:Static helpers:SizeHelper.ImageHeightDouble}"
+										   />
 									<StackLayout VerticalOptions="EndAndExpand"
 												 Padding="0,0,0,16"
 												 Orientation="Horizontal"
