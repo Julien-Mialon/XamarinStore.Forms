@@ -17,6 +17,12 @@
 						WinPhone="38" 
 						iOS="38"
 						/>
+			<OnPlatform x:Key="BasketSize"
+						x:TypeArguments="x:Int32"
+						Android="38"
+						WinPhone="38"
+						iOS="38"
+						/>
 			<OnPlatform x:Key="BasketSource"
 						x:TypeArguments="ImageSource"
 						Android="basket.png"
@@ -31,37 +37,50 @@
 						/>
 		</ResourceDictionary>
 	</StackLayout.Resources>
-	<StackLayout HorizontalOptions="StartAndExpand"
-				 Orientation="Horizontal">
-		
-		<Image HorizontalOptions="Center"
-			   VerticalOptions="Center"
-			   Aspect="AspectFit"
-			   HeightRequest="{StaticResource LogoSize}"
-			   WidthRequest="{StaticResource LogoSize}"
-			   Source="{StaticResource LogoSource}"
-
-			   />
-		<Label Text="Xamarin Store"
-			   FontAttributes="Bold"
-			   FontSize="18"
-			   TextColor="{StaticResource GrayColor}"
-			   VerticalOptions="Center"
-			   />
-	</StackLayout>
 	
-	<StackLayout HorizontalOptions="EndAndExpand"
-				 Orientation="Horizontal"
-				 IsVisible="{Binding IsBasketEnabled}"
-				 >
-		<controls:ImageButton Source="{StaticResource BasketSource}"
-							  Orientation="ImageToLeft"
-							  BackgroundColor="White"
-							  TextColor="Black"
-							  Text="{Binding BasketCountText}"
-							  FontSize="16"
-							  Command="{Binding OpenBasketCommand}"
+	<Grid HorizontalOptions="FillAndExpand"
+		  >
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="1*"/>
+			<ColumnDefinition Width="1*"/>
+		</Grid.ColumnDefinitions>
+		
+		<StackLayout Grid.Column="0"
+					 HorizontalOptions="FillAndExpand"
+					 Orientation="Horizontal">
 
-							  />
-	</StackLayout>
+			<Image VerticalOptions="Center"
+				   Aspect="AspectFit"
+				   HeightRequest="{StaticResource LogoSize}"
+				   WidthRequest="{StaticResource LogoSize}"
+				   Source="{StaticResource LogoSource}"
+				   HorizontalOptions="Start"
+				   />
+			<Label Text="Xamarin Store"
+				   FontAttributes="Bold"
+				   FontSize="18"
+				   TextColor="{StaticResource GrayColor}"
+				   VerticalOptions="Center"
+				   />
+		</StackLayout>
+
+		<StackLayout Grid.Column="1"
+					 HorizontalOptions="FillAndExpand"
+					 Orientation="Horizontal"
+					 IsVisible="{Binding IsBasketEnabled}"
+					 >
+			<controls:ImageButton Source="{StaticResource BasketSource}"
+								  HorizontalOptions="EndAndExpand"
+								  WidthRequest="150"
+								  ImageWidthRequest="{StaticResource BasketSize}"
+								  ImageHeightRequest="{StaticResource BasketSize}"
+								  Orientation="ImageToLeft"
+								  BackgroundColor="White"
+								  TextColor="Black"
+								  Text="{Binding BasketCountText}"
+								  FontSize="16"
+								  Command="{Binding OpenBasketCommand}"
+								  />
+		</StackLayout>
+	</Grid>
 </StackLayout>

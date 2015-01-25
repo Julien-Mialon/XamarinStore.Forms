@@ -15,7 +15,8 @@
 		</ResourceDictionary>
 	</ContentPage.Resources>
 
-	<Grid VerticalOptions="FillAndExpand">
+	<Grid VerticalOptions="FillAndExpand"
+		  HorizontalOptions="FillAndExpand">
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto" />
 			<RowDefinition Height="*" />
